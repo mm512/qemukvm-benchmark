@@ -10,17 +10,15 @@ static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
 
-int get_file_size(FILE *input_file)
-{
-    int size = 0;
-    fseek(input_file, 0, SEEK_END);
-    size = ftell(input_file);
-    rewind(input_file);
-
-    return size;
-}
-
-int compress(FILE *source, FILE *arch, int level, unsigned int *source_len)
+/**
+ * @brief Compresses source file to archive file. Measures compression stats. Function saves source data size.
+ * @param source source file
+ * @param arch archive file
+ * @param level compression level
+ * @param source_len source data size
+ * @return Returns BZIP2_SUCCESS on success or BZIP2_FAILURE if something go wrong.
+ */
+static int compress(FILE *source, FILE *arch, int level, unsigned int *source_len)
 {
     char *buf;
     char *output;
@@ -34,7 +32,7 @@ int compress(FILE *source, FILE *arch, int level, unsigned int *source_len)
 
     buf = (char*)malloc(sizeof(char) * buf_size);
     if (!buf) {
-        puts("bzip2 error: problem with allocating memory for buffer.");
+        puts("bzip2 compression error: problem with allocating memory for buffer.");
         return BZIP2_FAILURE;
     }
 
@@ -42,6 +40,16 @@ int compress(FILE *source, FILE *arch, int level, unsigned int *source_len)
     // allocate an output buffer of size 1% larger than the uncompressed data, plus six hundred extra bytes.
     output_size = buf_size + (1/100 * buf_size) + 600;
     output = (char*)malloc(sizeof(char) * output_size);
+
+    if (!output) {
+        puts("bzip2 compression error: problem with allocating memory for archive buffer.");
+        if (buf) {
+            free(buf);
+            buf = NULL;
+        }
+
+        return BZIP2_FAILURE;
+    }
 
     // Start measure time.
     clock_gettime(CLOCK_REALTIME, &start_ts);
@@ -71,7 +79,13 @@ int compress(FILE *source, FILE *arch, int level, unsigned int *source_len)
     return BZIP2_SUCCESS;
 }
 
-int decompress(FILE *arch, unsigned int source_len)
+/**
+ * @brief Decompresses archive file and measures decompression stats.
+ * @param arch archive file
+ * @param source_len source (uncompressed) data size. It is calculated in compress function.
+ * @return Returns BZIP2_SUCCESS on success or BZIP2_FAILURE if something go wrong.
+ */
+static int decompress(FILE *arch, unsigned int source_len)
 {
     int bz_error;
     struct timespec start_ts, stop_ts;

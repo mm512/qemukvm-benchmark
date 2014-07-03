@@ -3,6 +3,7 @@
 #include "util.h"
 #include "zlib_compression.h"
 #include "bzip2_compression.h"
+#include "snappy_compression.h"
 
 void usage(void)
 {
@@ -57,6 +58,17 @@ int run_benchmark(FILE *source, char *file_name, int library, int level, int ite
         }
         run_bzip2(source, archfile, level, iterations);
         fclose(archfile);
+        break;
+    case LIB_SNAPPY:
+        strcat(arch_file_name, ".snappy");
+        archfile = fopen(arch_file_name, "w+");
+        if (!archfile) {
+            puts("Error: problem with openin archive file.");
+            return 1;
+        }
+
+        run_snappy(source, archfile, iterations);
+        fclose(archfile);
     default:
         return 1;
     }
@@ -102,6 +114,9 @@ int main(int argc, char **argv)
     rewind(infile);
     puts("\nBZIP2\n");
     run_benchmark(infile, input_file_name, LIB_BZIP2, level, iterations);
+    rewind(infile);
+    puts("\nSNAPPY\n");
+    run_benchmark(infile, input_file_name, LIB_SNAPPY, level, iterations);
 
     fclose(infile);
     return 0;

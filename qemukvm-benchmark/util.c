@@ -13,3 +13,13 @@ struct timespec diff(struct timespec start, struct timespec end)
 
     return temp;
 }
+
+int get_file_size(FILE *input_file)
+{
+    int size = 0;
+    fseek(input_file, 0, SEEK_END);
+    size = ftell(input_file);
+    rewind(input_file);
+
+    return size;
+}

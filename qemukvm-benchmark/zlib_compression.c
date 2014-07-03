@@ -9,7 +9,17 @@ static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
 
-int def(FILE *source, FILE *dest, int level)
+/**
+ * @brief Compresses data from source file to dest file.
+ * @param source input file
+ * @param dest output file
+ * @param level compression level (in the range of -1 to 9)
+ * @return Returns Z_OK on success,
+ * Z_MEM_ERROR if memeory could not be allocated,
+ * ZVERSION_ERROR if the version of zlib.h and the version of the library linked do not match,
+ * Z_ERRNO if there is an error reading or writing the files.
+ */
+static int def(FILE *source, FILE *dest, int level)
 {
     int ret, flush;
     unsigned int have;  // Amount of data returned from deflate().
@@ -64,7 +74,16 @@ int def(FILE *source, FILE *dest, int level)
     return Z_OK;
 }
 
-int inf(FILE *source)
+/**
+ * @brief Decompress data from source file to dest file.
+ * @param source input file
+ * @return Returns Z_OK on success,
+ * Z_MEM_ERROR if memeory could not be allocated,
+ * Z_DATA_ERROR if the deflate data is invalid or incomplete,
+ * ZVERSION_ERROR if the version of zlib.h and the version of the library linked do not match,
+ * Z_ERRNO if there is an error reading or writing the files.
+ */
+static int inf(FILE *source)
 {
     int ret;
 //    unsigned int have;
@@ -127,8 +146,14 @@ int inf(FILE *source)
     return ret == Z_STREAM_END ? Z_OK : Z_DATA_ERROR;
 }
 
-
-int compress_with_zlib(FILE *source, FILE *arch, int level)
+/**
+ * @brief Runs def function and measure compression stats.
+ * @param source input file
+ * @param arch archive file
+ * @param level compression level
+ * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
+ */
+static int compress_with_zlib(FILE *source, FILE *arch, int level)
 {
     struct timespec start_ts, stop_ts;
 
@@ -150,7 +175,12 @@ int compress_with_zlib(FILE *source, FILE *arch, int level)
     return ZLIB_SUCCESS;
 }
 
-int decompress_with_zlib(FILE *source)
+/**
+ * @brief Runs inf function and measure decompression stats.
+ * @param source input file
+ * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
+ */
+static int decompress_with_zlib(FILE *source)
 {
     struct timespec start_ts, stop_ts;
 

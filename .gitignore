@@ -23,5 +23,7 @@
 *.hex
 
 # Custom
-*.tif
 *.zlib
+*.snappy
+*.bz2
+*.lzo

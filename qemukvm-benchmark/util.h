@@ -9,12 +9,19 @@
 enum {
     LIB_ZLIB,
     LIB_BZIP2,
-    LIB_SNAPPY
+    LIB_SNAPPY,
+    LIB_LZO
 };
 enum {
     LOW_COMPRESSION,
     HIGH_COMPRESSION
 };
+
+typedef struct {
+    int iterations;
+    int library;
+    int level;
+} bench_options;
 
 /**
  * @brief Calculates and returns difference between two timespec structures.

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "util.h"
 #include "zlib_compression.h"
@@ -7,29 +8,64 @@
 
 void usage(void)
 {
-    printf("Usage:\n\tqemukvm-benchmark [-l or -h] source_path\n-l - low compression\n-h high compression");
+    printf("Usage:\n\tqemukvm-benchmark [options] source_path\noptions:\n");
+    printf("-l - low compression\n-h - high compression\n");
+    printf("-t number - iterations\n");
+    printf("--zlib - ZLIB compression\n");
+    printf("--bzip2 - BZIP2 compression\n");
+    printf("--snappy - Snappy compression\n");
+    printf("--lzo - LZO compression\n\n");
 }
 
-void get_input_name(char *file_name, char **argv)
+void get_options(int argc, char **argv, bench_options *options, char *input_file_name)
 {
-    if (argv[1][0] == '-') {
-        strcpy(file_name, argv[2]);
-    } else {
-        strcpy(file_name, argv[1]);
-    }
-}
-
-int get_compression_level(char *argv)
-{
-    if (argv[0] == '-') {
-        if (argv[1] == 'l') {
-            return LOW_COMPRESSION;
-        } else {
-            return HIGH_COMPRESSION;
+    for (int i = 1; i < argc; ++i) {
+        // Iterations
+        if (!strcmp(argv[i], "-t")) {
+            options->iterations = atoi(argv[i+1]);
+        }
+        // Compression
+        else if (!strcmp(argv[i], "-l")) {
+            options->level = LOW_COMPRESSION;
+#ifndef STATS_MODE
+            puts("Compression level set to low.");
+#endif
+        }
+        else if (!strcmp(argv[i], "-h")) {
+            options->level = HIGH_COMPRESSION;
+#ifndef STATS_MODE
+            puts("Compression level set to high.");
+#endif
+        }
+        // Libraries
+        else if (!strcmp(argv[i], "--zlib")) {
+            options->library = LIB_ZLIB;
+#ifndef STATS_MODE
+            puts("Library set to zlib");
+#endif
+        }
+        else if (!strcmp(argv[i], "--bzip2")) {
+            options->library = LIB_BZIP2;
+#ifndef STATS_MODE
+            puts("Library set to bzip2");
+#endif
+        }
+        else if (!strcmp(argv[i], "--snappy")) {
+            options->library = LIB_SNAPPY;
+#ifndef STATS_MODE
+            puts("Library set to snappy");
+#endif
+        }
+        else if (!strcmp(argv[i], "--lzo")) {
+            options->library = LIB_LZO;
+#ifndef STATS_MODE
+            puts("Library set to lzo");
+#endif
+        }
+        else {
+            strcpy(input_file_name, argv[i]);
         }
     }
-
-    return HIGH_COMPRESSION;
 }
 
 int run_benchmark(FILE *source, char *file_name, int library, int level, int iterations)
@@ -78,12 +114,18 @@ int run_benchmark(FILE *source, char *file_name, int library, int level, int ite
 
 int main(int argc, char **argv)
 {
-    int iterations = 1;
-    int level = HIGH_COMPRESSION;
+    bench_options options;
     FILE *infile;
     char input_file_name[100];
 
+    // Defaults.
+    options.iterations = 1;
+    options.level = HIGH_COMPRESSION;
+    options.library = LIB_ZLIB;
+
+#ifndef STATS_MODE
     puts("*** QEMU KVM performance benchmark ***\n");
+#endif
 
     if (argc < 2) {
         puts("Too few arguments");
@@ -91,15 +133,12 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    get_input_name(input_file_name, argv);
+//    get_input_name(input_file_name, argv);
 
-    // Level.
-    level = get_compression_level(argv[1]);
-    if (level == LOW_COMPRESSION) {
-        puts("Compression level set to low.");
-    } else {
-        puts("Compression level set to high.");
-    }
+    get_options(argc, argv, &options, input_file_name);
+#ifndef STATS_MODE
+    printf("Iterations set to %d\n", options.iterations);
+#endif
 
     // Open input file.
     infile = fopen(input_file_name, "r");
@@ -108,15 +147,34 @@ int main(int argc, char **argv)
         return 1;
     }
 
-
-    puts("\nZLIB\n");
-    run_benchmark(infile, input_file_name, LIB_ZLIB, level, iterations);
-    rewind(infile);
-    puts("\nBZIP2\n");
-    run_benchmark(infile, input_file_name, LIB_BZIP2, level, iterations);
-    rewind(infile);
-    puts("\nSNAPPY\n");
-    run_benchmark(infile, input_file_name, LIB_SNAPPY, level, iterations);
+    switch(options.library) {
+    case LIB_ZLIB:
+#ifndef STATS_MODE
+        puts("\n\n*************** *************** ZLIB *************** ***************\n");
+        printf("file: %s\n", input_file_name);
+#endif
+        run_benchmark(infile, input_file_name, LIB_ZLIB, options.level, options.iterations);
+        rewind(infile);
+        break;
+    case LIB_BZIP2:
+#ifndef STATS_MODE
+        puts("\n\n*************** *************** BZIP2 *************** ***************\n");
+        printf("file: %s\n", input_file_name);
+#endif
+        run_benchmark(infile, input_file_name, LIB_BZIP2, options.level, options.iterations);
+        rewind(infile);
+        break;
+    case LIB_SNAPPY:
+#ifndef STATS_MODE
+        puts("\n\n*************** *************** SNAPPY *************** ***************\n");
+        printf("file: %s\n", input_file_name);
+#endif
+        run_benchmark(infile, input_file_name, LIB_SNAPPY, options.level, options.iterations);
+        break;
+    case LIB_LZO:
+    default:
+        break;
+    }
 
     fclose(infile);
     return 0;

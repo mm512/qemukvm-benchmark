@@ -21,9 +21,13 @@ Use bash scripts to automate execution process. Scripts run benchmark with all f
 
 `./run.sh > results.txt`
 
-Now, result file can be processed with create_stats.py script which convert results to other format - with values only.
+Now, result file can be processed with create_stats.py script which convert results to other format - with values only. 
 
 `python2.7 create_stats.py > stats.txt`
+
+You can also choose another input file:
+
+`python2.7 create_stats.py -i result_file.txt > stats.txt`
 
 To get needed libraries on Debian you can download:
 

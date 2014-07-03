@@ -25,6 +25,12 @@ Now, result file can be processed with create_stats.py script which convert resu
 
 `python2.7 create_stats.py > stats.txt`
 
+To get needed libraries on Debian you can download:
+
+1. zlib1g zlib1g-dbg zlib1g-dev
+2. libbz2-1.0 libbz2-dev
+3. libsnappy1 libsnappy-dev
+4. liblzo2-2 liblzo2-dev
 
 
 ## Used compression libraries

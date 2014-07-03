@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
     int iterations = 1;
     int arg_index = 1;
-    int level;
+    int level = HIGH_COMPRESSION;
     FILE *infile, *archfile;
     char arch_file_name[100];
 
@@ -28,10 +28,15 @@ int main(int argc, char **argv)
     if (argv[1][0] == '-') {
         if (argv[1][1] == 'l') {
             level = LOW_COMPRESSION;
+            puts("Compression level set to low.");
         } else {
             level = HIGH_COMPRESSION;
+            puts("Compression level set to high.");
         }
+
         ++arg_index;
+    } else {
+        puts("Compression level set to high.");
     }
 
     infile = fopen(argv[arg_index], "r");

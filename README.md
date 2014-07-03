@@ -7,3 +7,4 @@ C/C++ performance benchmark for QEMU with TCG and KVM acceleration.
 
 1. zlib: http://www.zlib.net/
 2. libbzip2: http://www.bzip.org/
+3. snappy: https://code.google.com/p/snappy/

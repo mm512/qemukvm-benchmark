@@ -19,11 +19,11 @@ Use bash scripts to automate execution process. Scripts run benchmark with all f
 
 Now, result file can be processed with create_stats.py script which convert results to other format - with values only.
 
-`make`
+`make
 
-`./run.sh > results.txt`
+./run.sh > results.txt
 
-`python2.7 create_stats.py > stats.txt`
+python2.7 create_stats.py > stats.txt`
 
 
 

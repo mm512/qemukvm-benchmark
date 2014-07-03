@@ -12,18 +12,18 @@ I run this benchmark on base Debian system inside QEMU, with no acceleration (QE
 
 Besides QT Creator makefiles, there is custom Makefile to simplify building benchmark on base system.
 
+`make`
+
 Use bash scripts to automate execution process. Scripts run benchmark with all files in provided data set.
 
 1. run.sh - runs benchmark with high compression level
 2. run-low.sh - runs benchmark with low compression level
 
+`./run.sh > results.txt`
+
 Now, result file can be processed with create_stats.py script which convert results to other format - with values only.
 
-`make
-
-./run.sh > results.txt
-
-python2.7 create_stats.py > stats.txt`
+`python2.7 create_stats.py > stats.txt`
 
 
 

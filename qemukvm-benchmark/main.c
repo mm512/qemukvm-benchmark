@@ -5,7 +5,7 @@
 
 void usage(void)
 {
-    printf("Usage:\n\tqemukvm-benchmark [-level] source_path\n");
+    printf("Usage:\n\tqemukvm-benchmark [-l or -h] source_path\n-l - low compression\n-h high compression");
 }
 
 int main(int argc, char **argv)
@@ -26,7 +26,11 @@ int main(int argc, char **argv)
 
     // Level.
     if (argv[1][0] == '-') {
-        level = argv[1][1] - '0';
+        if (argv[1][1] == 'l') {
+            level = LOW_COMPRESSION;
+        } else {
+            level = HIGH_COMPRESSION;
+        }
         ++arg_index;
     }
 
@@ -45,7 +49,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    run_zlib(infile, archfile, HIGH_COMPRESSION, iterations);
+    run_zlib(infile, archfile, level, iterations);
 
     fclose(infile);
     fclose(archfile);

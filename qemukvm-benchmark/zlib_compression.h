@@ -13,12 +13,6 @@ enum {
     ZLIB_FAILURE
 };
 
-// If stats mode is enabled we're going to run
-// several tests and measure mean values.
-static float mean_compression_time;
-static float mean_compression_ratio;
-static float mean_decompression_time;
-
 // Hack for Windows/MS-DOS to avoid corruption of the input and output data.
 // Source: www.zlib.net/zlib_how.html
 #if defined(MSDOS) || defined(OS2) || defined(WIN32) || defined(__CYGWIN__)
@@ -60,14 +54,14 @@ int inf(FILE *source);
  * @param source input file
  * @param arch archive file
  * @param level compression level
- * @return
+ * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
  */
 int compress_with_zlib(FILE *source, FILE *arch, int level);
 
 /**
  * @brief Runs inf function and measure decompression stats.
  * @param source input file
- * @return
+ * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
  */
 int decompress_with_zlib(FILE *source);
 

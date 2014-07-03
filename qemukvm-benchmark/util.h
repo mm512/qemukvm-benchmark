@@ -6,7 +6,8 @@
 #define STATS_MODE 1
 
 enum {
-    LIB_ZLIB
+    LIB_ZLIB,
+    LIB_BZIP2
 };
 enum {
     LOW_COMPRESSION,

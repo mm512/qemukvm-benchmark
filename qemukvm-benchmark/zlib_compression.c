@@ -3,6 +3,12 @@
 #include <string.h>
 #include <zlib.h>
 
+// If stats mode is enabled we're going to run
+// several tests and measure mean values.
+static float mean_compression_time;
+static float mean_compression_ratio;
+static float mean_decompression_time;
+
 int def(FILE *source, FILE *dest, int level)
 {
     int ret, flush;

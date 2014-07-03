@@ -2,6 +2,7 @@
 #include <string.h>
 #include "util.h"
 #include "zlib_compression.h"
+#include "bzip2_compression.h"
 
 void usage(void)
 {
@@ -47,6 +48,15 @@ int run_benchmark(FILE *source, char *file_name, int library, int level, int ite
         run_zlib(source, archfile, level, iterations);
         fclose(archfile);
         break;
+    case LIB_BZIP2:
+        strcat(arch_file_name, ".bz2");
+        archfile = fopen(arch_file_name, "w+");
+        if (!archfile) {
+            puts("Error: problem with opening archive file.");
+            return 1;
+        }
+        run_bzip2(source, archfile, level, iterations);
+        fclose(archfile);
     default:
         return 1;
     }
@@ -86,9 +96,12 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // Run zlib.
-    run_benchmark(infile, input_file_name, LIB_ZLIB, level, iterations);
 
+    puts("\nZLIB\n");
+    run_benchmark(infile, input_file_name, LIB_ZLIB, level, iterations);
+    rewind(infile);
+    puts("\nBZIP2\n");
+    run_benchmark(infile, input_file_name, LIB_BZIP2, level, iterations);
 
     fclose(infile);
     return 0;

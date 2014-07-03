@@ -15,9 +15,9 @@ Use bash scripts to automate execution process. Scripts run benchmark with all f
 2. run-low.sh - runs benchmark with low compression level
 Now, result file can be processed with create_stats.py script which convert results to other format - with values only.
 
-`make
-./run.sh > results.txt
-python2.7 create_stats.py > stats.txt`
+`make`
+`./run.sh > results.txt`
+`python2.7 create_stats.py > stats.txt`
 
 
 

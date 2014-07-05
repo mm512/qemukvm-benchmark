@@ -1,4 +1,6 @@
 #!/bin/bash
+readonly ITERATIONS=10
+
 recurse() {
 	for i in "$1"/*
 	do
@@ -12,13 +14,13 @@ recurse() {
 				echo "file: $i"
 				if [ "$2" == "./qemukvm-benchmark" ]; then
 				  if [ "$3" == "zlib" ]; then
-						"$2" -l -t 10 --zlib "$i"
+						"$2" -l -t $ITERATIONS --zlib "$i"
 				  elif [ "$3" == "bzip2" ]; then
-						"$2" -l -t 10 --bzip2 "$i"
+						"$2" -l -t $ITERATIONS --bzip2 "$i"
 				  elif [ "$3" == "snappy" ]; then
-						"$2" -l -t 10 --snappy "$i"
+						"$2" -l -t $ITERATIONS --snappy "$i"
 				  elif [ "$3" == "lzo" ]; then
-						"$2" -l -t 10 --lzo "$i"
+						"$2" -l -t $ITERATIONS --lzo "$i"
 				  fi
 				fi
 				printf "\n********************************\n\n"

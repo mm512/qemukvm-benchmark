@@ -5,6 +5,7 @@
 #include "zlib_compression.h"
 #include "bzip2_compression.h"
 #include "snappy_compression.h"
+#include "lzo_compression.h"
 
 void usage(void)
 {
@@ -17,6 +18,33 @@ void usage(void)
     printf("--lzo - LZO compression\n\n");
 }
 
+void print_configuration(bench_options options)
+{
+    printf("Iterations set to %d\n", options.iterations);
+    if (options.level == LOW_COMPRESSION) {
+        puts("Compression level set to low.");
+    } else {
+        puts("Compression level set to high.");
+    }
+
+    switch(options.library) {
+    case LIB_ZLIB:
+        puts("Library set to zlib");
+        break;
+    case LIB_BZIP2:
+        puts("Library set to bzip2");
+        break;
+    case LIB_SNAPPY:
+        puts("Library set to snappy");
+        break;
+    case LIB_LZO:
+        puts("Library set to lzo");
+        break;
+    default:
+        break;
+    }
+}
+
 void get_options(int argc, char **argv, bench_options *options, char *input_file_name)
 {
     for (int i = 1; i < argc; ++i) {
@@ -27,40 +55,22 @@ void get_options(int argc, char **argv, bench_options *options, char *input_file
         // Compression
         else if (!strcmp(argv[i], "-l")) {
             options->level = LOW_COMPRESSION;
-#ifndef STATS_MODE
-            puts("Compression level set to low.");
-#endif
         }
         else if (!strcmp(argv[i], "-h")) {
             options->level = HIGH_COMPRESSION;
-#ifndef STATS_MODE
-            puts("Compression level set to high.");
-#endif
         }
         // Libraries
         else if (!strcmp(argv[i], "--zlib")) {
             options->library = LIB_ZLIB;
-#ifndef STATS_MODE
-            puts("Library set to zlib");
-#endif
         }
         else if (!strcmp(argv[i], "--bzip2")) {
             options->library = LIB_BZIP2;
-#ifndef STATS_MODE
-            puts("Library set to bzip2");
-#endif
         }
         else if (!strcmp(argv[i], "--snappy")) {
             options->library = LIB_SNAPPY;
-#ifndef STATS_MODE
-            puts("Library set to snappy");
-#endif
         }
         else if (!strcmp(argv[i], "--lzo")) {
             options->library = LIB_LZO;
-#ifndef STATS_MODE
-            puts("Library set to lzo");
-#endif
         }
         else {
             strcpy(input_file_name, argv[i]);
@@ -68,13 +78,13 @@ void get_options(int argc, char **argv, bench_options *options, char *input_file
     }
 }
 
-int run_benchmark(FILE *source, char *file_name, int library, int level, int iterations)
+int run_benchmark(FILE *source, char *file_name, bench_options options)
 {
     FILE *archfile;
     char arch_file_name[100];
     strcpy(arch_file_name, file_name);
 
-    switch(library) {
+    switch(options.library) {
     case LIB_ZLIB:
         strcat(arch_file_name, ".zlib");
         archfile = fopen(arch_file_name, "w+");
@@ -82,7 +92,7 @@ int run_benchmark(FILE *source, char *file_name, int library, int level, int ite
             puts("Error: problem with opening archive file.");
             return 1;
         }
-        run_zlib(source, archfile, level, iterations);
+        run_zlib(source, archfile, options.level, options.iterations);
         fclose(archfile);
         break;
     case LIB_BZIP2:
@@ -92,7 +102,7 @@ int run_benchmark(FILE *source, char *file_name, int library, int level, int ite
             puts("Error: problem with opening archive file.");
             return 1;
         }
-        run_bzip2(source, archfile, level, iterations);
+        run_bzip2(source, archfile, options.level, options.iterations);
         fclose(archfile);
         break;
     case LIB_SNAPPY:
@@ -103,8 +113,19 @@ int run_benchmark(FILE *source, char *file_name, int library, int level, int ite
             return 1;
         }
 
-        run_snappy(source, archfile, iterations);
+        run_snappy(source, archfile, options.iterations);
         fclose(archfile);
+        break;
+    case LIB_LZO:
+        strcat(arch_file_name, ".lzo");
+        archfile = fopen(arch_file_name, "w+");
+        if (!archfile) {
+            puts("Error: problem with openin archive file.");
+            return 1;
+        }
+        run_lzo(source, archfile, options.level, options.iterations);
+        fclose(archfile);
+        break;
     default:
         return 1;
     }
@@ -133,11 +154,9 @@ int main(int argc, char **argv)
         return 1;
     }
 
-//    get_input_name(input_file_name, argv);
-
     get_options(argc, argv, &options, input_file_name);
 #ifndef STATS_MODE
-    printf("Iterations set to %d\n", options.iterations);
+    print_configuration(options);
 #endif
 
     // Open input file.
@@ -153,7 +172,7 @@ int main(int argc, char **argv)
         puts("\n\n*************** *************** ZLIB *************** ***************\n");
         printf("file: %s\n", input_file_name);
 #endif
-        run_benchmark(infile, input_file_name, LIB_ZLIB, options.level, options.iterations);
+        run_benchmark(infile, input_file_name, options);
         rewind(infile);
         break;
     case LIB_BZIP2:
@@ -161,7 +180,7 @@ int main(int argc, char **argv)
         puts("\n\n*************** *************** BZIP2 *************** ***************\n");
         printf("file: %s\n", input_file_name);
 #endif
-        run_benchmark(infile, input_file_name, LIB_BZIP2, options.level, options.iterations);
+        run_benchmark(infile, input_file_name, options);
         rewind(infile);
         break;
     case LIB_SNAPPY:
@@ -169,9 +188,15 @@ int main(int argc, char **argv)
         puts("\n\n*************** *************** SNAPPY *************** ***************\n");
         printf("file: %s\n", input_file_name);
 #endif
-        run_benchmark(infile, input_file_name, LIB_SNAPPY, options.level, options.iterations);
+        run_benchmark(infile, input_file_name, options);
         break;
     case LIB_LZO:
+#ifndef STATS_MODE
+        puts("\n\n*************** *************** LZO *************** ***************\n");
+        printf("file: %s\n", input_file_name);
+#endif
+        run_benchmark(infile, input_file_name, options);
+        break;
     default:
         break;
     }

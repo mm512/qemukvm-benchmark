@@ -1,0 +1,85 @@
+
+
+*************** *************** ZLIB *************** ***************
+
+file: testdata/text/1musk10.txt
+zlib: compression level set on 9
+Mean compression ratio: 36.35%
+Mean compression time: 117.956 ms
+Mean decompression time: 5.986 ms
+
+********************************
+
+file: testdata/text/anne11.txt
+zlib: compression level set on 9
+Mean compression ratio: 37.81%
+Mean compression time: 48.582 ms
+Mean decompression time: 2.673 ms
+
+********************************
+
+file: testdata/text/world95.txt
+zlib: compression level set on 9
+Mean compression ratio: 28.90%
+Mean compression time: 197.952 ms
+Mean decompression time: 11.689 ms
+
+********************************
+
+
+
+*************** *************** BZIP2 *************** ***************
+
+file: testdata/text/1musk10.txt
+bzip2: compression level set on 9
+Mean compression ratio: 26.00%
+Mean compression time: 133.022 ms
+Mean decompression time: 63.948 ms
+
+********************************
+
+file: testdata/text/anne11.txt
+bzip2: compression level set on 9
+Mean compression ratio: 27.76%
+Mean compression time: 59.579 ms
+Mean decompression time: 26.661 ms
+
+********************************
+
+file: testdata/text/world95.txt
+bzip2: compression level set on 9
+Mean compression ratio: 19.26%
+Mean compression time: 317.684 ms
+Mean decompression time: 144.539 ms
+
+********************************
+
+
+
+*************** *************** SNAPPY *************** ***************
+
+file: testdata/text/1musk10.txt
+Mean compression ratio: 59.97%
+Mean compression time: 0.943 ms
+Mean decompression time: 0.217 ms
+
+********************************
+
+file: testdata/text/anne11.txt
+Mean compression ratio: 61.86%
+Mean compression time: 0.479 ms
+Mean decompression time: 0.094 ms
+
+********************************
+
+file: testdata/text/world95.txt
+Mean compression ratio: 51.25%
+Mean compression time: 1.910 ms
+Mean decompression time: 0.414 ms
+
+********************************
+
+
+
+*************** *************** LZO *************** ***************
+

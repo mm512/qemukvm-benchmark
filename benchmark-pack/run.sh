@@ -36,4 +36,4 @@ recurse testdata/text ./qemukvm-benchmark bzip2
 printf "\n\n*************** *************** SNAPPY *************** ***************\n\n"
 recurse testdata/text ./qemukvm-benchmark snappy
 printf "\n\n*************** *************** LZO *************** ***************\n\n"
-#recurse testdata ./qemukvm-benchmark lzo
+recurse testdata/text ./qemukvm-benchmark lzo

@@ -10,7 +10,10 @@ I run this benchmark on base Debian system inside QEMU, with no acceleration (QE
 
 ## HOWTO
 
-Besides QT Creator makefiles, there is custom Makefile to simplify building benchmark on base system.
+Benchmark is made with QT Creator. Besides QT Creator files there is benchmark-pack directory with custom Makefile to simplify building benchmark on base system inside VM.
+Inside pack there are also bash, python scripts to create statistics and test data set.
+
+Just:
 
 `make`
 

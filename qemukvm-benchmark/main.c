@@ -146,7 +146,7 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
             return 1;
         }
 
-        run_snappy(source, archfile, options.iterations);
+        run_snappy(source, archfile, outputfile, options.iterations);
         fclose(archfile);
         break;
     case LIB_LZO:

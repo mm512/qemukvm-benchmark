@@ -9,6 +9,12 @@ static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
 
+/**
+ * @brief Compresses source file to archive file. Measures compression stats.
+ * @param source source file
+ * @param arch archive file
+ * @return Returns SNAPPY_SUCCESS on success or SNAPPY_FAILURE if something go wrong.
+ */
 int compress(FILE *source, FILE *arch)
 {
     struct timespec start_ts, stop_ts;
@@ -66,7 +72,13 @@ int compress(FILE *source, FILE *arch)
     return SNAPPY_SUCCESS;
 }
 
-int decompress(FILE *arch)
+/**
+ * @brief Decompresses archive file and measures decompression stats.
+ * @param arch archive file
+ * @param output_file output, decompressed file
+ * @return Returns SNAPPY_SUCCESS on success or SNAPPY_FAILURE if something go wrong.
+ */
+int decompress(FILE *arch, FILE *output_file)
 {
     struct timespec start_ts, stop_ts;
     char *compressed = NULL;
@@ -97,6 +109,11 @@ int decompress(FILE *arch)
 
     snappy_uncompress(compressed, compressed_len, uncompressed, &uncompressed_len);
 
+    if (fwrite(uncompressed, 1, uncompressed_len, output_file) != uncompressed_len || ferror(output_file)) {
+        puts("snappy decompression error: problem with writing to output file");
+        return SNAPPY_FAILURE;
+    }
+
     clock_gettime(CLOCK_REALTIME, &stop_ts);
 
     struct timespec result_ts = diff(start_ts, stop_ts);
@@ -108,7 +125,7 @@ int decompress(FILE *arch)
     return SNAPPY_SUCCESS;
 }
 
-int run_snappy(FILE *source, FILE *arch, int iterations)
+int run_snappy(FILE *source, FILE *arch, FILE *output, int iterations)
 {
     int ret;
 
@@ -128,7 +145,7 @@ int run_snappy(FILE *source, FILE *arch, int iterations)
 
     rewind(arch);
     for (int i = 0; i < iterations; ++i) {
-        ret = decompress(arch);
+        ret = decompress(arch, output);
         if (ret == SNAPPY_FAILURE) {
             return ret;
         }
@@ -138,13 +155,13 @@ int run_snappy(FILE *source, FILE *arch, int iterations)
 
     printf("Mean decompression time: %.3f ms\n", mean_decompression_time / iterations);
 #else
-    ret = compress(source, arch, level, &source_len);
+    ret = compress(source, arch);
     if (ret == SNAPPY_FAILURE) {
         return ret;
     }
 
     rewind(arch);
-    ret = decompress(arch, source_len);
+    ret = decompress(arch, output);
     if (ret == SNAPPY_FAILURE) {
         return ret;
     }

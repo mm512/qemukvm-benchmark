@@ -30,10 +30,10 @@ recurse() {
 }
 
 printf "\n\n*************** *************** ZLIB *************** ***************\n\n"
-recurse testdata/text ./qemukvm-benchmark zlib
+recurse testdata ./qemukvm-benchmark zlib
 printf "\n\n*************** *************** BZIP2 *************** ***************\n\n"
-recurse testdata/text ./qemukvm-benchmark bzip2
+recurse testdata ./qemukvm-benchmark bzip2
 printf "\n\n*************** *************** SNAPPY *************** ***************\n\n"
-recurse testdata/text ./qemukvm-benchmark snappy
+recurse testdata ./qemukvm-benchmark snappy
 printf "\n\n*************** *************** LZO *************** ***************\n\n"
-recurse testdata/text ./qemukvm-benchmark lzo
+recurse testdata ./qemukvm-benchmark lzo

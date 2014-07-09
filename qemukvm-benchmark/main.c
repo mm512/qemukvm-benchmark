@@ -80,36 +80,69 @@ void get_options(int argc, char **argv, bench_options *options, char *input_file
 
 int run_benchmark(FILE *source, char *file_name, bench_options options)
 {
-    FILE *archfile;
+    FILE *archfile, *outputfile;
     char arch_file_name[100];
+    char output_file_name[100];
     strcpy(arch_file_name, file_name);
 
     switch(options.library) {
     case LIB_ZLIB:
         strcat(arch_file_name, ".zlib");
+        strcpy(output_file_name, arch_file_name);
+        strcat(output_file_name, "_dec");
         archfile = fopen(arch_file_name, "w+");
         if (!archfile) {
             puts("Error: problem with opening archive file.");
             return 1;
         }
-        run_zlib(source, archfile, options.level, options.iterations);
+
+        outputfile = fopen(output_file_name, "w+");
+
+        if (!outputfile) {
+            puts("Error: problem with opening output file.");
+            fclose(archfile);
+            return 1;
+        }
+
+        run_zlib(source, archfile, outputfile, options.level, options.iterations);
         fclose(archfile);
         break;
     case LIB_BZIP2:
         strcat(arch_file_name, ".bz2");
+        strcpy(output_file_name, arch_file_name);
+        strcat(output_file_name, "_dec");
         archfile = fopen(arch_file_name, "w+");
         if (!archfile) {
             puts("Error: problem with opening archive file.");
             return 1;
         }
+
+        outputfile = fopen(output_file_name, "w+");
+
+        if (!outputfile) {
+            puts("Error: problem with opening output file.");
+            fclose(archfile);
+            return 1;
+        }
+
         run_bzip2(source, archfile, options.level, options.iterations);
         fclose(archfile);
         break;
     case LIB_SNAPPY:
         strcat(arch_file_name, ".snappy");
+        strcpy(output_file_name, arch_file_name);
+        strcat(output_file_name, "_dec");
         archfile = fopen(arch_file_name, "w+");
         if (!archfile) {
             puts("Error: problem with openin archive file.");
+            return 1;
+        }
+
+        outputfile = fopen(output_file_name, "w+");
+
+        if (!outputfile) {
+            puts("Error: problem with opening output file.");
+            fclose(archfile);
             return 1;
         }
 
@@ -118,11 +151,22 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
         break;
     case LIB_LZO:
         strcat(arch_file_name, ".lzo");
+        strcpy(output_file_name, arch_file_name);
+        strcat(output_file_name, "_dec");
         archfile = fopen(arch_file_name, "w+");
         if (!archfile) {
             puts("Error: problem with openin archive file.");
             return 1;
         }
+
+        outputfile = fopen(output_file_name, "w+");
+
+        if (!outputfile) {
+            puts("Error: problem with opening output file.");
+            fclose(archfile);
+            return 1;
+        }
+
         run_lzo(source, archfile, options.level, options.iterations);
         fclose(archfile);
         break;

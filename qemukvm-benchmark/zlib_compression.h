@@ -34,7 +34,7 @@ enum {
  * @param iterations iterations count
  * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
  */
-int run_zlib(FILE *source, FILE *arch, int compression_level, int iterations);
+int run_zlib(FILE *source, FILE *arch, FILE *output, int compression_level, int iterations);
 
 
 #endif // ZLIB_COMPRESSION_H

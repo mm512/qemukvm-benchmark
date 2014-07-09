@@ -2,108 +2,27 @@
 
 *************** *************** ZLIB *************** ***************
 
-file: testdata/text/1musk10.txt
+file: testdata/executable/101.EXE
 zlib: compression level set on 9
-Mean compression ratio: 36.35%
-Mean compression time: 128.475 ms
-Mean decompression time: 6.209 ms
+Mean compression ratio: 45.24%
+Mean compression time: 48.898 ms
+Mean decompression time: 3.537 ms
 
 ********************************
 
-file: testdata/text/anne11.txt
+file: testdata/executable/netscape.exe
 zlib: compression level set on 9
-Mean compression ratio: 37.81%
-Mean compression time: 58.496 ms
-Mean decompression time: 2.656 ms
+Mean compression ratio: 46.76%
+Mean compression time: 413.674 ms
+Mean decompression time: 15.932 ms
 
 ********************************
 
-file: testdata/text/world95.txt
+file: testdata/executable/pine.bin
 zlib: compression level set on 9
-Mean compression ratio: 28.90%
-Mean compression time: 208.024 ms
-Mean decompression time: 11.644 ms
-
-********************************
-
-
-
-*************** *************** BZIP2 *************** ***************
-
-file: testdata/text/1musk10.txt
-bzip2: compression level set on 9
-Mean compression ratio: 26.00%
-Mean compression time: 129.660 ms
-Mean decompression time: 61.635 ms
-
-********************************
-
-file: testdata/text/anne11.txt
-bzip2: compression level set on 9
-Mean compression ratio: 27.76%
-Mean compression time: 58.395 ms
-Mean decompression time: 21.977 ms
-
-********************************
-
-file: testdata/text/world95.txt
-bzip2: compression level set on 9
-Mean compression ratio: 19.26%
-Mean compression time: 294.989 ms
-Mean decompression time: 142.838 ms
-
-********************************
-
-
-
-*************** *************** SNAPPY *************** ***************
-
-file: testdata/text/1musk10.txt
-Mean compression ratio: 59.97%
-Mean compression time: 1.139 ms
-Mean decompression time: 0.197 ms
-
-********************************
-
-file: testdata/text/anne11.txt
-Mean compression ratio: 61.86%
-Mean compression time: 0.580 ms
-Mean decompression time: 0.093 ms
-
-********************************
-
-file: testdata/text/world95.txt
-Mean compression ratio: 51.25%
-Mean compression time: 2.270 ms
-Mean decompression time: 0.390 ms
-
-********************************
-
-
-
-*************** *************** LZO *************** ***************
-
-file: testdata/text/1musk10.txt
-LZO: compression level set on 9
-Mean compression ratio: 42.22%
-Mean compression time: 263.789 ms
-Mean decompression time: 3.922 ms
-
-********************************
-
-file: testdata/text/anne11.txt
-LZO: compression level set on 9
-Mean compression ratio: 43.85%
-Mean compression time: 109.277 ms
-Mean decompression time: 1.798 ms
-
-********************************
-
-file: testdata/text/world95.txt
-LZO: compression level set on 9
-Mean compression ratio: 32.88%
-Mean compression time: 408.559 ms
-Mean decompression time: 7.192 ms
+Mean compression ratio: 36.29%
+Mean compression time: 148.390 ms
+Mean decompression time: 7.489 ms
 
 ********************************
 

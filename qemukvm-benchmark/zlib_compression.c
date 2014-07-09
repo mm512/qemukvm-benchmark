@@ -83,10 +83,10 @@ static int def(FILE *source, FILE *dest, int level)
  * ZVERSION_ERROR if the version of zlib.h and the version of the library linked do not match,
  * Z_ERRNO if there is an error reading or writing the files.
  */
-static int inf(FILE *source)
+static int inf(FILE *source, FILE *output)
 {
     int ret;
-//    unsigned int have;
+    unsigned int have;
     z_stream stream;    // Is used to pass information to/from zlib routines.
     unsigned char in[CHUNK];    // Input buffer.
     unsigned char out[CHUNK];   // Output buffer.
@@ -133,11 +133,12 @@ static int inf(FILE *source)
                 return ret;
             }
 
-//            have = CHUNK - stream.avail_out;
-//            if (fwrite(out, 1, have, dest) != have || ferror(dest)) {
-//                inflateEnd(&stream);
-//                return Z_ERRNO;
-//            }
+            have = CHUNK - stream.avail_out;
+            if (fwrite(out, 1, have, output) != have || ferror(output)) {
+                puts("zlib decompression error: problem with writing to output file");
+                inflateEnd(&stream);
+                return Z_ERRNO;
+            }
         } while (stream.avail_out == 0);
 
     } while (ret != Z_STREAM_END);
@@ -180,12 +181,12 @@ static int compress_with_zlib(FILE *source, FILE *arch, int level)
  * @param source input file
  * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
  */
-static int decompress_with_zlib(FILE *source)
+static int decompress_with_zlib(FILE *source, FILE *output)
 {
     struct timespec start_ts, stop_ts;
 
     clock_gettime(CLOCK_REALTIME, &start_ts);
-    if (inf(source) != Z_OK) {
+    if (inf(source, output) != Z_OK) {
         puts("zlib decompression error.");
         return ZLIB_FAILURE;
     }
@@ -202,7 +203,7 @@ static int decompress_with_zlib(FILE *source)
     return ZLIB_SUCCESS;
 }
 
-int run_zlib(FILE *source, FILE *arch, int compression_level, int iterations)
+int run_zlib(FILE *source, FILE *arch, FILE *output, int compression_level, int iterations)
 {
     int ret;
     // Compression level must be Z_DEFAULT_COMPRESSION, or between 0 and 9, where 0 gives no compression at all.
@@ -233,7 +234,7 @@ int run_zlib(FILE *source, FILE *arch, int compression_level, int iterations)
 
     rewind(arch);
     for (int i = 0; i < iterations; ++i) {
-        ret = decompress_with_zlib(arch);
+        ret = decompress_with_zlib(arch, output);
         if (ret == ZLIB_FAILURE) {
             return ret;
         }
@@ -249,7 +250,7 @@ int run_zlib(FILE *source, FILE *arch, int compression_level, int iterations)
     }
 
     rewind(arch);
-    ret = decompress_with_zlib(arch);
+    ret = decompress_with_zlib(arch, output);
     if (ret == ZLIB_FAILURE) {
         return ret;
     }

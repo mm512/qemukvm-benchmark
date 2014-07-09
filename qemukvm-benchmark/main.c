@@ -125,7 +125,7 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
             return 1;
         }
 
-        run_bzip2(source, archfile, options.level, options.iterations);
+        run_bzip2(source, archfile, outputfile, options.level, options.iterations);
         fclose(archfile);
         break;
     case LIB_SNAPPY:

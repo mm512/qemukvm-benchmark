@@ -30,6 +30,7 @@ enum {
  * @brief Start benchmark with zlib.
  * @param source input file
  * @param arch archive file after compression
+ * @param output output file after decompression
  * @param compression_level compression level
  * @param iterations iterations count
  * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.

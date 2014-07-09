@@ -77,6 +77,7 @@ static int def(FILE *source, FILE *dest, int level)
 /**
  * @brief Decompress data from source file to dest file.
  * @param source input file
+ * @param output output, decompressed file
  * @return Returns Z_OK on success,
  * Z_MEM_ERROR if memeory could not be allocated,
  * Z_DATA_ERROR if the deflate data is invalid or incomplete,
@@ -179,6 +180,7 @@ static int compress_with_zlib(FILE *source, FILE *arch, int level)
 /**
  * @brief Runs inf function and measure decompression stats.
  * @param source input file
+ * @param output output, decompressed file
  * @return Returns ZLIB_SUCCESS on success or ZLIB_FAILURE if something go wrong.
  */
 static int decompress_with_zlib(FILE *source, FILE *output)

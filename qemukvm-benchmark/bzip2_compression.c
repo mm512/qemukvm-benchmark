@@ -82,10 +82,11 @@ static int compress(FILE *source, FILE *arch, int level, unsigned int *source_le
 /**
  * @brief Decompresses archive file and measures decompression stats.
  * @param arch archive file
+ * @param output_file output, decompressed file
  * @param source_len source (uncompressed) data size. It is calculated in compress function.
  * @return Returns BZIP2_SUCCESS on success or BZIP2_FAILURE if something go wrong.
  */
-static int decompress(FILE *arch, unsigned int source_len)
+static int decompress(FILE *arch, FILE *output_file, unsigned int source_len)
 {
     int bz_error;
     struct timespec start_ts, stop_ts;
@@ -117,7 +118,12 @@ static int decompress(FILE *arch, unsigned int source_len)
     bz_error = BZ2_bzBuffToBuffDecompress(output, &source_len, input, arch_size, 0, 0);
 
     if (bz_error != BZ_OK) {
-        puts("bzip2 error: problems with decompression.");
+        puts("bzip2 decompression error: problems with decompression.");
+        return BZIP2_FAILURE;
+    }
+
+    if (fwrite(output, 1, source_len, output_file) != source_len || ferror(output_file)) {
+        puts("bzip2 decompression error: problem with writing to output file");
         return BZIP2_FAILURE;
     }
     clock_gettime(CLOCK_REALTIME, &stop_ts);
@@ -140,7 +146,7 @@ static int decompress(FILE *arch, unsigned int source_len)
     return BZIP2_SUCCESS;
 }
 
-int run_bzip2(FILE *source, FILE *arch, int compression_level, int iterations)
+int run_bzip2(FILE *source, FILE *arch, FILE *output, int compression_level, int iterations)
 {
     unsigned int source_len;
     int level, ret;
@@ -168,7 +174,7 @@ int run_bzip2(FILE *source, FILE *arch, int compression_level, int iterations)
 
     rewind(arch);
     for (int i = 0; i < iterations; ++i) {
-        ret = decompress(arch, source_len);
+        ret = decompress(arch, output, source_len);
         if (ret == BZIP2_FAILURE) {
             return ret;
         }
@@ -184,7 +190,7 @@ int run_bzip2(FILE *source, FILE *arch, int compression_level, int iterations)
     }
 
     rewind(arch);
-    ret = decompress(arch, source_len);
+    ret = decompress(arch, output, source_len);
     if (ret == BZIP2_FAILURE) {
         return ret;
     }

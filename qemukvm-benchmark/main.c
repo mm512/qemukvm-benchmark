@@ -106,6 +106,7 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
 
         run_zlib(source, archfile, outputfile, options.level, options.iterations);
         fclose(archfile);
+        fclose(outputfile);
         break;
     case LIB_BZIP2:
         strcat(arch_file_name, ".bz2");
@@ -127,6 +128,7 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
 
         run_bzip2(source, archfile, outputfile, options.level, options.iterations);
         fclose(archfile);
+        fclose(outputfile);
         break;
     case LIB_SNAPPY:
         strcat(arch_file_name, ".snappy");
@@ -148,6 +150,7 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
 
         run_snappy(source, archfile, outputfile, options.iterations);
         fclose(archfile);
+        fclose(outputfile);
         break;
     case LIB_LZO:
         strcat(arch_file_name, ".lzo");
@@ -167,8 +170,9 @@ int run_benchmark(FILE *source, char *file_name, bench_options options)
             return 1;
         }
 
-        run_lzo(source, archfile, options.level, options.iterations);
+        run_lzo(source, archfile, outputfile, options.level, options.iterations);
         fclose(archfile);
+        fclose(outputfile);
         break;
     default:
         return 1;

@@ -224,9 +224,10 @@ static int compress(FILE *source, FILE *arch, int level, lzo_uint32 block_size)
 /**
  * @brief Decompresses data from file and measures stats.
  * @param arch archive file
+ * @param output output, decompressed file
  * @return Returns LZO_SUCCESS on success or LZO_FAILURE if something go wrong.
  */
-static int decompress(FILE *arch)
+static int decompress(FILE *arch, FILE *output)
 {
     struct timespec start_ts, stop_ts;
     int ret;
@@ -301,7 +302,10 @@ static int decompress(FILE *arch)
                 lzo_free(buf);
                 return LZO_FAILURE;
             }
-
+            xwrite(output, out, out_len);
+        }
+        else {
+            xwrite(output, in, in_len);
         }
     }
     clock_gettime(CLOCK_REALTIME, &stop_ts);
@@ -316,7 +320,7 @@ static int decompress(FILE *arch)
     return LZO_SUCCESS;
 }
 
-int run_lzo(FILE *source, FILE *arch, int compression_level, int iterations)
+int run_lzo(FILE *source, FILE *arch, FILE *output, int compression_level, int iterations)
 {
     int ret, opt_compression_level;
     lzo_uint32 opt_block_size = 256 * 1024L;
@@ -350,7 +354,7 @@ int run_lzo(FILE *source, FILE *arch, int compression_level, int iterations)
 
     rewind(arch);
     for (int i = 0; i < iterations; ++i) {
-        ret = decompress(arch);
+        ret = decompress(arch, output);
         if (ret == LZO_FAILURE) {
             return ret;
         }
@@ -366,7 +370,7 @@ int run_lzo(FILE *source, FILE *arch, int compression_level, int iterations)
     }
 
     rewind(arch);
-    ret = decompress(arch);
+    ret = decompress(arch, output);
     if (ret == LZO_FAILURE) {
         return ret;
     }

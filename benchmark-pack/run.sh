@@ -10,7 +10,7 @@ recurse() {
 			recurse "$i" "$2" "$3"
 		# if file
 		elif [ -f "$i" ]; then
-			if [[ "$i" != *.lzo ]] && [[ "$i" != *.bz2 ]] && [[ "$i" != *.zlib ]] && [[ "$i" != *.snappy ]]; then
+			if [[ "$i" != *.lzo ]] && [[ "$i" != *.bz2 ]] && [[ "$i" != *.zlib ]] && [[ "$i" != *.snappy ]] && [[ "$i" != *_dec ]]; then
 				echo "file: $i"
 				if [ "$2" == "./qemukvm-benchmark" ]; then
 				  if [ "$3" == "zlib" ]; then

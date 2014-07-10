@@ -5,224 +5,224 @@
 file: testdata/calgary-corpus/bib
 zlib: compression level set on 1
 Mean compression ratio: 39.42%
-Mean compression time: 3.573 ms
-Mean decompression time: 0.820 ms
+Mean compression time: 3.518 ms
+Mean decompression time: 0.941 ms
 
 ********************************
 
 file: testdata/calgary-corpus/book1
 zlib: compression level set on 1
 Mean compression ratio: 47.55%
-Mean compression time: 16.785 ms
-Mean decompression time: 3.993 ms
+Mean compression time: 15.857 ms
+Mean decompression time: 4.258 ms
 
 ********************************
 
 file: testdata/calgary-corpus/book2
 zlib: compression level set on 1
 Mean compression ratio: 40.80%
-Mean compression time: 10.544 ms
-Mean decompression time: 3.296 ms
+Mean compression time: 9.525 ms
+Mean decompression time: 3.169 ms
 
 ********************************
 
 file: testdata/calgary-corpus/geo
 zlib: compression level set on 1
 Mean compression ratio: 68.23%
-Mean compression time: 2.904 ms
-Mean decompression time: 0.746 ms
+Mean compression time: 2.836 ms
+Mean decompression time: 0.776 ms
 
 ********************************
 
 file: testdata/calgary-corpus/news
 zlib: compression level set on 1
 Mean compression ratio: 43.56%
-Mean compression time: 6.737 ms
-Mean decompression time: 1.916 ms
+Mean compression time: 6.388 ms
+Mean decompression time: 2.064 ms
 
 ********************************
 
 file: testdata/calgary-corpus/obj1
 zlib: compression level set on 1
 Mean compression ratio: 49.71%
-Mean compression time: 0.431 ms
-Mean decompression time: 0.128 ms
+Mean compression time: 0.435 ms
+Mean decompression time: 0.137 ms
 
 ********************************
 
 file: testdata/calgary-corpus/obj2
 zlib: compression level set on 1
 Mean compression ratio: 37.87%
-Mean compression time: 4.190 ms
-Mean decompression time: 1.677 ms
+Mean compression time: 4.108 ms
+Mean decompression time: 1.311 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper1
 zlib: compression level set on 1
 Mean compression ratio: 40.65%
-Mean compression time: 1.033 ms
-Mean decompression time: 0.290 ms
+Mean compression time: 0.785 ms
+Mean decompression time: 0.288 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper2
 zlib: compression level set on 1
 Mean compression ratio: 42.68%
-Mean compression time: 1.466 ms
-Mean decompression time: 0.434 ms
+Mean compression time: 1.320 ms
+Mean decompression time: 0.445 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper3
 zlib: compression level set on 1
 Mean compression ratio: 44.72%
-Mean compression time: 0.774 ms
-Mean decompression time: 0.256 ms
+Mean compression time: 1.421 ms
+Mean decompression time: 0.539 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper4
 zlib: compression level set on 1
 Mean compression ratio: 45.58%
-Mean compression time: 0.282 ms
-Mean decompression time: 0.081 ms
+Mean compression time: 0.503 ms
+Mean decompression time: 0.158 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper5
 zlib: compression level set on 1
 Mean compression ratio: 45.22%
-Mean compression time: 0.244 ms
-Mean decompression time: 0.078 ms
+Mean compression time: 0.261 ms
+Mean decompression time: 0.086 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper6
 zlib: compression level set on 1
 Mean compression ratio: 40.07%
-Mean compression time: 0.632 ms
-Mean decompression time: 0.198 ms
+Mean compression time: 0.606 ms
+Mean decompression time: 0.222 ms
 
 ********************************
 
 file: testdata/calgary-corpus/pic
 zlib: compression level set on 1
 Mean compression ratio: 12.77%
-Mean compression time: 4.282 ms
-Mean decompression time: 1.266 ms
+Mean compression time: 4.064 ms
+Mean decompression time: 1.465 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progc
 zlib: compression level set on 1
 Mean compression ratio: 38.95%
-Mean compression time: 0.700 ms
-Mean decompression time: 0.198 ms
+Mean compression time: 0.575 ms
+Mean decompression time: 0.214 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progl
 zlib: compression level set on 1
 Mean compression ratio: 27.95%
-Mean compression time: 0.928 ms
-Mean decompression time: 0.283 ms
+Mean compression time: 0.853 ms
+Mean decompression time: 0.312 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progp
 zlib: compression level set on 1
 Mean compression ratio: 27.07%
-Mean compression time: 0.544 ms
-Mean decompression time: 0.296 ms
+Mean compression time: 0.547 ms
+Mean decompression time: 0.214 ms
 
 ********************************
 
 file: testdata/calgary-corpus/trans
 zlib: compression level set on 1
 Mean compression ratio: 25.56%
-Mean compression time: 0.974 ms
-Mean decompression time: 0.334 ms
+Mean compression time: 0.963 ms
+Mean decompression time: 0.381 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/alice29.txt
 zlib: compression level set on 1
 Mean compression ratio: 43.37%
-Mean compression time: 2.661 ms
-Mean decompression time: 1.162 ms
+Mean compression time: 2.443 ms
+Mean decompression time: 0.847 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/asyoulik.txt
 zlib: compression level set on 1
 Mean compression ratio: 45.38%
-Mean compression time: 2.193 ms
-Mean decompression time: 0.637 ms
+Mean compression time: 8.000 ms
+Mean decompression time: 0.739 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/cp.html
 zlib: compression level set on 1
 Mean compression ratio: 36.72%
-Mean compression time: 0.360 ms
-Mean decompression time: 0.122 ms
+Mean compression time: 0.495 ms
+Mean decompression time: 0.176 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/fields.c
 zlib: compression level set on 1
 Mean compression ratio: 32.71%
-Mean compression time: 0.190 ms
-Mean decompression time: 0.057 ms
+Mean compression time: 0.244 ms
+Mean decompression time: 0.084 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/grammar.lsp
 zlib: compression level set on 1
 Mean compression ratio: 35.80%
-Mean compression time: 0.100 ms
-Mean decompression time: 0.021 ms
+Mean compression time: 0.128 ms
+Mean decompression time: 0.037 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/kennedy.xls
 zlib: compression level set on 1
 Mean compression ratio: 23.53%
-Mean compression time: 10.023 ms
-Mean decompression time: 3.043 ms
+Mean compression time: 11.454 ms
+Mean decompression time: 3.582 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/lcet10.txt
 zlib: compression level set on 1
 Mean compression ratio: 41.14%
-Mean compression time: 7.178 ms
-Mean decompression time: 1.988 ms
+Mean compression time: 6.851 ms
+Mean decompression time: 2.243 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/plrabn12.txt
 zlib: compression level set on 1
 Mean compression ratio: 48.02%
-Mean compression time: 8.616 ms
-Mean decompression time: 2.496 ms
+Mean compression time: 8.592 ms
+Mean decompression time: 2.668 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/ptt5
 zlib: compression level set on 1
 Mean compression ratio: 12.77%
-Mean compression time: 4.123 ms
-Mean decompression time: 1.295 ms
+Mean compression time: 3.994 ms
+Mean decompression time: 1.466 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/sum
 zlib: compression level set on 1
 Mean compression ratio: 36.92%
-Mean compression time: 0.662 ms
-Mean decompression time: 0.199 ms
+Mean compression time: 0.649 ms
+Mean decompression time: 0.213 ms
 
 ********************************
 
@@ -230,135 +230,135 @@ file: testdata/canterbury-corpus/xargs.1
 zlib: compression level set on 1
 Mean compression ratio: 43.81%
 Mean compression time: 0.112 ms
-Mean decompression time: 0.028 ms
+Mean decompression time: 0.032 ms
 
 ********************************
 
 file: testdata/executable/101.EXE
 zlib: compression level set on 1
 Mean compression ratio: 48.43%
-Mean compression time: 9.153 ms
-Mean decompression time: 2.442 ms
+Mean compression time: 8.904 ms
+Mean decompression time: 2.644 ms
 
 ********************************
 
 file: testdata/executable/netscape.exe
 zlib: compression level set on 1
 Mean compression ratio: 50.33%
-Mean compression time: 65.717 ms
-Mean decompression time: 18.740 ms
+Mean compression time: 63.637 ms
+Mean decompression time: 19.050 ms
 
 ********************************
 
 file: testdata/executable/pine.bin
 zlib: compression level set on 1
 Mean compression ratio: 41.25%
-Mean compression time: 32.434 ms
-Mean decompression time: 8.598 ms
+Mean compression time: 27.191 ms
+Mean decompression time: 8.903 ms
 
 ********************************
 
 file: testdata/graphics/clegg.tif
 zlib: compression level set on 1
 Mean compression ratio: 24.79%
-Mean compression time: 24.147 ms
-Mean decompression time: 6.442 ms
+Mean compression time: 25.048 ms
+Mean decompression time: 7.931 ms
 
 ********************************
 
 file: testdata/graphics/frymire.tif
 zlib: compression level set on 1
 Mean compression ratio: 10.93%
-Mean compression time: 25.700 ms
-Mean decompression time: 8.300 ms
+Mean compression time: 26.840 ms
+Mean decompression time: 10.454 ms
 
 ********************************
 
 file: testdata/graphics/lena3.tif
 zlib: compression level set on 1
 Mean compression ratio: 91.21%
-Mean compression time: 23.829 ms
-Mean decompression time: 4.874 ms
+Mean compression time: 23.476 ms
+Mean decompression time: 5.182 ms
 
 ********************************
 
 file: testdata/graphics/monarch.tif
 zlib: compression level set on 1
 Mean compression ratio: 73.03%
-Mean compression time: 30.328 ms
-Mean decompression time: 7.338 ms
+Mean compression time: 31.046 ms
+Mean decompression time: 7.731 ms
 
 ********************************
 
 file: testdata/graphics/peppers3.tif
 zlib: compression level set on 1
 Mean compression ratio: 85.01%
-Mean compression time: 23.427 ms
-Mean decompression time: 4.966 ms
+Mean compression time: 22.555 ms
+Mean decompression time: 5.243 ms
 
 ********************************
 
 file: testdata/graphics/sail.tif
 zlib: compression level set on 1
 Mean compression ratio: 78.50%
-Mean compression time: 34.642 ms
-Mean decompression time: 7.437 ms
+Mean compression time: 31.992 ms
+Mean decompression time: 8.526 ms
 
 ********************************
 
 file: testdata/graphics/serrano.tif
 zlib: compression level set on 1
 Mean compression ratio: 10.98%
-Mean compression time: 10.070 ms
-Mean decompression time: 3.305 ms
+Mean compression time: 11.111 ms
+Mean decompression time: 3.885 ms
 
 ********************************
 
 file: testdata/graphics/tulips.tif
 zlib: compression level set on 1
 Mean compression ratio: 83.94%
-Mean compression time: 34.916 ms
-Mean decompression time: 7.605 ms
+Mean compression time: 37.133 ms
+Mean decompression time: 8.077 ms
 
 ********************************
 
 file: testdata/sound/every.wav
 zlib: compression level set on 1
 Mean compression ratio: 96.03%
-Mean compression time: 219.848 ms
-Mean decompression time: 36.365 ms
+Mean compression time: 214.881 ms
+Mean decompression time: 39.219 ms
 
 ********************************
 
 file: testdata/sound/mike.wav
 zlib: compression level set on 1
 Mean compression ratio: 71.69%
-Mean compression time: 46.494 ms
-Mean decompression time: 10.432 ms
+Mean compression time: 43.687 ms
+Mean decompression time: 10.999 ms
 
 ********************************
 
 file: testdata/text/1musk10.txt
 zlib: compression level set on 1
 Mean compression ratio: 43.84%
-Mean compression time: 22.581 ms
-Mean decompression time: 6.765 ms
+Mean compression time: 21.789 ms
+Mean decompression time: 7.226 ms
 
 ********************************
 
 file: testdata/text/anne11.txt
 zlib: compression level set on 1
 Mean compression ratio: 45.03%
-Mean compression time: 9.934 ms
-Mean decompression time: 3.031 ms
+Mean compression time: 9.721 ms
+Mean decompression time: 3.179 ms
 
 ********************************
 
 file: testdata/text/world95.txt
 zlib: compression level set on 1
 Mean compression ratio: 37.52%
-Mean compression time: 45.537 ms
-Mean decompression time: 13.534 ms
+Mean compression time: 45.932 ms
+Mean decompression time: 14.651 ms
 
 ********************************
 
@@ -369,679 +369,360 @@ Mean decompression time: 13.534 ms
 file: testdata/calgary-corpus/bib
 bzip2: compression level set on 1
 Mean compression ratio: 26.29%
-Mean compression time: 10.641 ms
-Mean decompression time: 3.308 ms
+Mean compression time: 10.391 ms
+Mean decompression time: 3.317 ms
 
 ********************************
 
 file: testdata/calgary-corpus/book1
 bzip2: compression level set on 1
 Mean compression ratio: 35.19%
-Mean compression time: 71.861 ms
-Mean decompression time: 28.629 ms
+Mean compression time: 70.148 ms
+Mean decompression time: 28.137 ms
 
 ********************************
 
 file: testdata/calgary-corpus/book2
 bzip2: compression level set on 1
 Mean compression ratio: 30.02%
-Mean compression time: 59.295 ms
-Mean decompression time: 20.196 ms
+Mean compression time: 56.909 ms
+Mean decompression time: 19.866 ms
 
 ********************************
 
 file: testdata/calgary-corpus/geo
 bzip2: compression level set on 1
 Mean compression ratio: 55.85%
-Mean compression time: 13.891 ms
-Mean decompression time: 4.626 ms
+Mean compression time: 10.257 ms
+Mean decompression time: 4.389 ms
 
 ********************************
 
 file: testdata/calgary-corpus/news
 bzip2: compression level set on 1
 Mean compression ratio: 35.69%
-Mean compression time: 35.691 ms
-Mean decompression time: 14.011 ms
+Mean compression time: 34.639 ms
+Mean decompression time: 13.680 ms
 
 ********************************
 
 file: testdata/calgary-corpus/obj1
 bzip2: compression level set on 1
 Mean compression ratio: 50.16%
-Mean compression time: 5.413 ms
-Mean decompression time: 1.082 ms
+Mean compression time: 3.134 ms
+Mean decompression time: 0.877 ms
 
 ********************************
 
 file: testdata/calgary-corpus/obj2
 bzip2: compression level set on 1
 Mean compression ratio: 32.44%
-Mean compression time: 23.523 ms
-Mean decompression time: 7.848 ms
+Mean compression time: 22.725 ms
+Mean decompression time: 7.711 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper1
 bzip2: compression level set on 1
 Mean compression ratio: 31.15%
-Mean compression time: 5.303 ms
-Mean decompression time: 1.687 ms
+Mean compression time: 5.193 ms
+Mean decompression time: 1.680 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper2
 bzip2: compression level set on 1
 Mean compression ratio: 30.46%
-Mean compression time: 7.828 ms
-Mean decompression time: 2.700 ms
+Mean compression time: 7.634 ms
+Mean decompression time: 2.651 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper3
 bzip2: compression level set on 1
 Mean compression ratio: 34.04%
-Mean compression time: 4.820 ms
-Mean decompression time: 1.547 ms
+Mean compression time: 7.929 ms
+Mean decompression time: 1.880 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper4
 bzip2: compression level set on 1
 Mean compression ratio: 39.05%
-Mean compression time: 2.214 ms
-Mean decompression time: 0.483 ms
+Mean compression time: 2.227 ms
+Mean decompression time: 0.502 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper5
 bzip2: compression level set on 1
 Mean compression ratio: 40.46%
-Mean compression time: 1.994 ms
-Mean decompression time: 0.440 ms
+Mean compression time: 1.907 ms
+Mean decompression time: 0.450 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper6
 bzip2: compression level set on 1
 Mean compression ratio: 32.26%
-Mean compression time: 4.001 ms
-Mean decompression time: 1.261 ms
+Mean compression time: 3.957 ms
+Mean decompression time: 1.220 ms
 
 ********************************
 
 file: testdata/calgary-corpus/pic
 bzip2: compression level set on 1
 Mean compression ratio: 9.73%
-Mean compression time: 18.369 ms
-Mean decompression time: 6.043 ms
+Mean compression time: 13.932 ms
+Mean decompression time: 5.938 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progc
 bzip2: compression level set on 1
 Mean compression ratio: 31.67%
-Mean compression time: 4.687 ms
-Mean decompression time: 1.320 ms
+Mean compression time: 4.034 ms
+Mean decompression time: 1.253 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progl
 bzip2: compression level set on 1
 Mean compression ratio: 21.74%
-Mean compression time: 6.513 ms
-Mean decompression time: 1.774 ms
+Mean compression time: 6.326 ms
+Mean decompression time: 1.770 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progp
 bzip2: compression level set on 1
 Mean compression ratio: 21.67%
-Mean compression time: 4.735 ms
-Mean decompression time: 1.162 ms
+Mean compression time: 4.610 ms
+Mean decompression time: 1.179 ms
 
 ********************************
 
 file: testdata/calgary-corpus/trans
 bzip2: compression level set on 1
 Mean compression ratio: 19.10%
-Mean compression time: 8.954 ms
-Mean decompression time: 2.136 ms
+Mean compression time: 8.667 ms
+Mean decompression time: 2.168 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/alice29.txt
 bzip2: compression level set on 1
 Mean compression ratio: 30.91%
-Mean compression time: 14.257 ms
-Mean decompression time: 4.860 ms
+Mean compression time: 13.794 ms
+Mean decompression time: 4.850 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/asyoulik.txt
 bzip2: compression level set on 1
 Mean compression ratio: 33.15%
-Mean compression time: 12.116 ms
-Mean decompression time: 4.343 ms
+Mean compression time: 11.890 ms
+Mean decompression time: 4.310 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/cp.html
 bzip2: compression level set on 1
 Mean compression ratio: 30.99%
-Mean compression time: 4.699 ms
-Mean decompression time: 0.947 ms
+Mean compression time: 2.972 ms
+Mean decompression time: 0.807 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/fields.c
 bzip2: compression level set on 1
 Mean compression ratio: 27.26%
-Mean compression time: 2.096 ms
-Mean decompression time: 0.324 ms
+Mean compression time: 2.689 ms
+Mean decompression time: 0.460 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/grammar.lsp
 bzip2: compression level set on 1
 Mean compression ratio: 34.48%
-Mean compression time: 0.694 ms
-Mean decompression time: 0.122 ms
+Mean compression time: 1.030 ms
+Mean decompression time: 0.199 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/kennedy.xls
 bzip2: compression level set on 1
 Mean compression ratio: 11.95%
-Mean compression time: 63.051 ms
-Mean decompression time: 15.690 ms
+Mean compression time: 69.692 ms
+Mean decompression time: 15.558 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/lcet10.txt
 bzip2: compression level set on 1
 Mean compression ratio: 29.67%
-Mean compression time: 37.837 ms
-Mean decompression time: 13.779 ms
+Mean compression time: 41.790 ms
+Mean decompression time: 13.584 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/plrabn12.txt
 bzip2: compression level set on 1
 Mean compression ratio: 34.83%
-Mean compression time: 48.139 ms
-Mean decompression time: 17.609 ms
+Mean compression time: 42.735 ms
+Mean decompression time: 17.894 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/ptt5
 bzip2: compression level set on 1
 Mean compression ratio: 9.73%
-Mean compression time: 15.092 ms
-Mean decompression time: 6.029 ms
+Mean compression time: 21.699 ms
+Mean decompression time: 5.940 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/sum
 bzip2: compression level set on 1
 Mean compression ratio: 33.76%
-Mean compression time: 4.364 ms
-Mean decompression time: 1.231 ms
+Mean compression time: 7.605 ms
+Mean decompression time: 1.490 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/xargs.1
 bzip2: compression level set on 1
 Mean compression ratio: 41.68%
-Mean compression time: 0.837 ms
-Mean decompression time: 0.190 ms
+Mean compression time: 0.799 ms
+Mean decompression time: 0.178 ms
 
 ********************************
 
 file: testdata/executable/101.EXE
 bzip2: compression level set on 1
 Mean compression ratio: 48.09%
-Mean compression time: 44.391 ms
-Mean decompression time: 18.391 ms
+Mean compression time: 42.595 ms
+Mean decompression time: 17.607 ms
 
 ********************************
 
 file: testdata/executable/netscape.exe
 bzip2: compression level set on 1
 Mean compression ratio: 46.32%
-Mean compression time: 284.309 ms
-Mean decompression time: 120.572 ms
+Mean compression time: 292.755 ms
+Mean decompression time: 118.860 ms
 
 ********************************
 
 file: testdata/executable/pine.bin
 bzip2: compression level set on 1
 Mean compression ratio: 35.01%
-Mean compression time: 151.293 ms
-Mean decompression time: 54.837 ms
+Mean compression time: 144.596 ms
+Mean decompression time: 53.437 ms
 
 ********************************
 
 file: testdata/graphics/clegg.tif
 bzip2: compression level set on 1
 Mean compression ratio: 41.36%
-Mean compression time: 206.824 ms
-Mean decompression time: 74.565 ms
+Mean compression time: 200.031 ms
+Mean decompression time: 73.941 ms
 
 ********************************
 
 file: testdata/graphics/frymire.tif
 bzip2: compression level set on 1
 Mean compression ratio: 6.08%
-Mean compression time: 320.345 ms
-Mean decompression time: 40.360 ms
+Mean compression time: 309.081 ms
+Mean decompression time: 41.415 ms
 
 ********************************
 
 file: testdata/graphics/lena3.tif
 bzip2: compression level set on 1
 Mean compression ratio: 76.23%
-Mean compression time: 82.312 ms
-Mean decompression time: 45.650 ms
+Mean compression time: 81.478 ms
+Mean decompression time: 105.278 ms
 
 ********************************
 
 file: testdata/graphics/monarch.tif
 bzip2: compression level set on 1
 Mean compression ratio: 62.54%
-Mean compression time: 122.975 ms
-Mean decompression time: 60.751 ms
+Mean compression time: 122.757 ms
+Mean decompression time: 60.002 ms
 
 ********************************
 
 file: testdata/graphics/peppers3.tif
 bzip2: compression level set on 1
 Mean compression ratio: 74.97%
-Mean compression time: 83.877 ms
-Mean decompression time: 46.238 ms
+Mean compression time: 85.038 ms
+Mean decompression time: 45.491 ms
 
 ********************************
 
 file: testdata/graphics/sail.tif
 bzip2: compression level set on 1
 Mean compression ratio: 69.74%
-Mean compression time: 122.222 ms
-Mean decompression time: 65.904 ms
+Mean compression time: 122.796 ms
+Mean decompression time: 69.385 ms
 
 ********************************
 
 file: testdata/graphics/serrano.tif
 bzip2: compression level set on 1
 Mean compression ratio: 6.24%
-Mean compression time: 280.063 ms
-Mean decompression time: 19.289 ms
+Mean compression time: 275.077 ms
+Mean decompression time: 20.342 ms
 
 ********************************
 
 file: testdata/graphics/tulips.tif
 bzip2: compression level set on 1
 Mean compression ratio: 76.65%
-Mean compression time: 129.549 ms
-Mean decompression time: 70.108 ms
+Mean compression time: 130.350 ms
+Mean decompression time: 69.404 ms
 
 ********************************
 
 file: testdata/sound/every.wav
 bzip2: compression level set on 1
 Mean compression ratio: 96.05%
-Mean compression time: 972.633 ms
-Mean decompression time: 419.964 ms
+Mean compression time: 940.035 ms
+Mean decompression time: 411.038 ms
 
 ********************************
 
 file: testdata/sound/mike.wav
 bzip2: compression level set on 1
 Mean compression ratio: 55.37%
-Mean compression time: 176.644 ms
-Mean decompression time: 88.410 ms
+Mean compression time: 169.262 ms
+Mean decompression time: 71.873 ms
 
 ********************************
 
 file: testdata/text/1musk10.txt
 bzip2: compression level set on 1
 Mean compression ratio: 30.85%
-Mean compression time: 124.199 ms
-Mean decompression time: 45.627 ms
+Mean compression time: 119.391 ms
+Mean decompression time: 44.844 ms
 
 ********************************
 
 file: testdata/text/anne11.txt
 bzip2: compression level set on 1
 Mean compression ratio: 32.14%
-Mean compression time: 54.057 ms
-Mean decompression time: 20.569 ms
+Mean compression time: 52.471 ms
+Mean decompression time: 20.325 ms
 
 ********************************
 
 file: testdata/text/world95.txt
 bzip2: compression level set on 1
 Mean compression ratio: 26.88%
-Mean compression time: 269.864 ms
-Mean decompression time: 91.054 ms
-
-********************************
-
-
-
-*************** *************** SNAPPY *************** ***************
-
-file: testdata/calgary-corpus/bib
-Mean compression ratio: 52.14%
-Mean compression time: 0.089 ms
-Mean decompression time: 0.132 ms
-
-********************************
-
-file: testdata/calgary-corpus/book1
-Mean compression ratio: 66.13%
-Mean compression time: 0.799 ms
-Mean decompression time: 0.124 ms
-
-********************************
-
-file: testdata/calgary-corpus/book2
-Mean compression ratio: 54.65%
-Mean compression time: 0.554 ms
-Mean decompression time: 0.085 ms
-
-********************************
-
-file: testdata/calgary-corpus/geo
-Mean compression ratio: 94.69%
-Mean compression time: 0.167 ms
-Mean decompression time: 0.282 ms
-
-********************************
-
-file: testdata/calgary-corpus/news
-Mean compression ratio: 57.94%
-Mean compression time: 0.535 ms
-Mean decompression time: 0.083 ms
-
-********************************
-
-file: testdata/calgary-corpus/obj1
-Mean compression ratio: 61.22%
-Mean compression time: 0.024 ms
-Mean decompression time: 0.032 ms
-
-********************************
-
-file: testdata/calgary-corpus/obj2
-Mean compression ratio: 49.08%
-Mean compression time: 0.267 ms
-Mean decompression time: 0.048 ms
-
-********************************
-
-file: testdata/calgary-corpus/paper1
-Mean compression ratio: 53.04%
-Mean compression time: 0.062 ms
-Mean decompression time: 0.118 ms
-
-********************************
-
-file: testdata/calgary-corpus/paper2
-Mean compression ratio: 57.13%
-Mean compression time: 0.091 ms
-Mean decompression time: 0.167 ms
-
-********************************
-
-file: testdata/calgary-corpus/paper3
-Mean compression ratio: 59.84%
-Mean compression time: 0.052 ms
-Mean decompression time: 0.095 ms
-
-********************************
-
-file: testdata/calgary-corpus/paper4
-Mean compression ratio: 61.74%
-Mean compression time: 0.014 ms
-Mean decompression time: 0.018 ms
-
-********************************
-
-file: testdata/calgary-corpus/paper5
-Mean compression ratio: 60.84%
-Mean compression time: 0.012 ms
-Mean decompression time: 0.016 ms
-
-********************************
-
-file: testdata/calgary-corpus/paper6
-Mean compression ratio: 52.70%
-Mean compression time: 0.032 ms
-Mean decompression time: 0.060 ms
-
-********************************
-
-file: testdata/calgary-corpus/pic
-Mean compression ratio: 18.11%
-Mean compression time: 0.274 ms
-Mean decompression time: 0.024 ms
-
-********************************
-
-file: testdata/calgary-corpus/progc
-Mean compression ratio: 50.84%
-Mean compression time: 0.032 ms
-Mean decompression time: 0.059 ms
-
-********************************
-
-file: testdata/calgary-corpus/progl
-Mean compression ratio: 37.04%
-Mean compression time: 0.056 ms
-Mean decompression time: 0.093 ms
-
-********************************
-
-file: testdata/calgary-corpus/progp
-Mean compression ratio: 35.49%
-Mean compression time: 0.035 ms
-Mean decompression time: 0.067 ms
-
-********************************
-
-file: testdata/calgary-corpus/trans
-Mean compression ratio: 34.42%
-Mean compression time: 0.062 ms
-Mean decompression time: 0.126 ms
-
-********************************
-
-file: testdata/canterbury-corpus/alice29.txt
-Mean compression ratio: 58.56%
-Mean compression time: 0.131 ms
-Mean decompression time: 0.021 ms
-
-********************************
-
-file: testdata/canterbury-corpus/asyoulik.txt
-Mean compression ratio: 61.93%
-Mean compression time: 0.104 ms
-Mean decompression time: 0.016 ms
-
-********************************
-
-file: testdata/canterbury-corpus/cp.html
-Mean compression ratio: 48.12%
-Mean compression time: 0.018 ms
-Mean decompression time: 0.028 ms
-
-********************************
-
-file: testdata/canterbury-corpus/fields.c
-Mean compression ratio: 42.35%
-Mean compression time: 0.011 ms
-Mean decompression time: 0.012 ms
-
-********************************
-
-file: testdata/canterbury-corpus/grammar.lsp
-Mean compression ratio: 48.43%
-Mean compression time: 0.004 ms
-Mean decompression time: 0.004 ms
-
-********************************
-
-file: testdata/canterbury-corpus/kennedy.xls
-Mean compression ratio: 41.23%
-Mean compression time: 0.486 ms
-Mean decompression time: 0.099 ms
-
-********************************
-
-file: testdata/canterbury-corpus/lcet10.txt
-Mean compression ratio: 55.27%
-Mean compression time: 0.367 ms
-Mean decompression time: 0.055 ms
-
-********************************
-
-file: testdata/canterbury-corpus/plrabn12.txt
-Mean compression ratio: 66.94%
-Mean compression time: 0.896 ms
-Mean decompression time: 0.121 ms
-
-********************************
-
-file: testdata/canterbury-corpus/ptt5
-Mean compression ratio: 18.11%
-Mean compression time: 0.258 ms
-Mean decompression time: 0.019 ms
-
-********************************
-
-file: testdata/canterbury-corpus/sum
-Mean compression ratio: 48.96%
-Mean compression time: 0.028 ms
-Mean decompression time: 0.050 ms
-
-********************************
-
-file: testdata/canterbury-corpus/xargs.1
-Mean compression ratio: 59.31%
-Mean compression time: 0.005 ms
-Mean decompression time: 0.004 ms
-
-********************************
-
-file: testdata/executable/101.EXE
-Mean compression ratio: 65.16%
-Mean compression time: 0.332 ms
-Mean decompression time: 0.076 ms
-
-********************************
-
-file: testdata/executable/netscape.exe
-Mean compression ratio: 65.32%
-Mean compression time: 2.227 ms
-Mean decompression time: 0.493 ms
-
-********************************
-
-file: testdata/executable/pine.bin
-Mean compression ratio: 53.19%
-Mean compression time: 1.186 ms
-Mean decompression time: 0.213 ms
-
-********************************
-
-file: testdata/graphics/clegg.tif
-Mean compression ratio: 44.61%
-Mean compression time: 0.956 ms
-Mean decompression time: 0.278 ms
-
-********************************
-
-file: testdata/graphics/frymire.tif
-Mean compression ratio: 17.06%
-Mean compression time: 1.467 ms
-Mean decompression time: 0.115 ms
-
-********************************
-
-file: testdata/graphics/lena3.tif
-Mean compression ratio: 99.16%
-Mean compression time: 0.326 ms
-Mean decompression time: 0.206 ms
-
-********************************
-
-file: testdata/graphics/monarch.tif
-Mean compression ratio: 88.89%
-Mean compression time: 0.865 ms
-Mean decompression time: 0.306 ms
-
-********************************
-
-file: testdata/graphics/peppers3.tif
-Mean compression ratio: 98.21%
-Mean compression time: 0.450 ms
-Mean decompression time: 0.199 ms
-
-********************************
-
-file: testdata/graphics/sail.tif
-Mean compression ratio: 97.77%
-Mean compression time: 0.706 ms
-Mean decompression time: 0.302 ms
-
-********************************
-
-file: testdata/graphics/serrano.tif
-Mean compression ratio: 17.26%
-Mean compression time: 0.598 ms
-Mean decompression time: 0.048 ms
-
-********************************
-
-file: testdata/graphics/tulips.tif
-Mean compression ratio: 97.21%
-Mean compression time: 0.735 ms
-Mean decompression time: 0.318 ms
-
-********************************
-
-file: testdata/sound/every.wav
-Mean compression ratio: 99.96%
-Mean compression time: 4.293 ms
-Mean decompression time: 2.216 ms
-
-********************************
-
-file: testdata/sound/mike.wav
-Mean compression ratio: 93.39%
-Mean compression time: 1.414 ms
-Mean decompression time: 0.439 ms
-
-********************************
-
-file: testdata/text/1musk10.txt
-Mean compression ratio: 59.97%
-Mean compression time: 1.157 ms
-Mean decompression time: 0.206 ms
-
-********************************
-
-file: testdata/text/anne11.txt
-Mean compression ratio: 61.86%
-Mean compression time: 0.562 ms
-Mean decompression time: 0.093 ms
-
-********************************
-
-file: testdata/text/world95.txt
-Mean compression ratio: 51.25%
-Mean compression time: 2.390 ms
-Mean decompression time: 0.415 ms
+Mean compression time: 266.968 ms
+Mean decompression time: 92.256 ms
 
 ********************************
 
@@ -1052,360 +733,360 @@ Mean decompression time: 0.415 ms
 file: testdata/calgary-corpus/bib
 LZO: compression level set on 1
 Mean compression ratio: 52.31%
-Mean compression time: 0.440 ms
-Mean decompression time: 0.298 ms
+Mean compression time: 0.445 ms
+Mean decompression time: 0.353 ms
 
 ********************************
 
 file: testdata/calgary-corpus/book1
 LZO: compression level set on 1
 Mean compression ratio: 64.59%
-Mean compression time: 3.698 ms
-Mean decompression time: 2.522 ms
+Mean compression time: 3.560 ms
+Mean decompression time: 2.840 ms
 
 ********************************
 
 file: testdata/calgary-corpus/book2
 LZO: compression level set on 1
 Mean compression ratio: 54.35%
-Mean compression time: 2.541 ms
-Mean decompression time: 1.816 ms
+Mean compression time: 2.447 ms
+Mean decompression time: 2.100 ms
 
 ********************************
 
 file: testdata/calgary-corpus/geo
 LZO: compression level set on 1
 Mean compression ratio: 98.17%
-Mean compression time: 0.163 ms
-Mean decompression time: 0.038 ms
+Mean compression time: 0.135 ms
+Mean decompression time: 0.083 ms
 
 ********************************
 
 file: testdata/calgary-corpus/news
 LZO: compression level set on 1
 Mean compression ratio: 57.56%
-Mean compression time: 1.580 ms
-Mean decompression time: 1.051 ms
+Mean compression time: 1.457 ms
+Mean decompression time: 1.201 ms
 
 ********************************
 
 file: testdata/calgary-corpus/obj1
 LZO: compression level set on 1
 Mean compression ratio: 59.93%
-Mean compression time: 0.069 ms
-Mean decompression time: 0.035 ms
+Mean compression time: 0.065 ms
+Mean decompression time: 0.046 ms
 
 ********************************
 
 file: testdata/calgary-corpus/obj2
 LZO: compression level set on 1
 Mean compression ratio: 47.67%
-Mean compression time: 0.848 ms
-Mean decompression time: 0.569 ms
+Mean compression time: 0.846 ms
+Mean decompression time: 0.680 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper1
 LZO: compression level set on 1
 Mean compression ratio: 52.92%
-Mean compression time: 0.219 ms
-Mean decompression time: 0.155 ms
+Mean compression time: 0.229 ms
+Mean decompression time: 0.180 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper2
 LZO: compression level set on 1
 Mean compression ratio: 56.78%
-Mean compression time: 0.366 ms
-Mean decompression time: 0.249 ms
+Mean compression time: 0.360 ms
+Mean decompression time: 0.288 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper3
 LZO: compression level set on 1
 Mean compression ratio: 58.51%
-Mean compression time: 0.235 ms
-Mean decompression time: 0.145 ms
+Mean compression time: 0.212 ms
+Mean decompression time: 0.175 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper4
 LZO: compression level set on 1
 Mean compression ratio: 60.52%
-Mean compression time: 0.059 ms
-Mean decompression time: 0.035 ms
+Mean compression time: 0.099 ms
+Mean decompression time: 0.065 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper5
 LZO: compression level set on 1
 Mean compression ratio: 60.10%
-Mean compression time: 0.055 ms
-Mean decompression time: 0.031 ms
+Mean compression time: 0.080 ms
+Mean decompression time: 0.058 ms
 
 ********************************
 
 file: testdata/calgary-corpus/paper6
 LZO: compression level set on 1
 Mean compression ratio: 51.45%
-Mean compression time: 0.176 ms
-Mean decompression time: 0.119 ms
+Mean compression time: 0.233 ms
+Mean decompression time: 0.199 ms
 
 ********************************
 
 file: testdata/calgary-corpus/pic
 LZO: compression level set on 1
 Mean compression ratio: 16.97%
-Mean compression time: 0.758 ms
-Mean decompression time: 0.519 ms
+Mean compression time: 0.937 ms
+Mean decompression time: 0.931 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progc
 LZO: compression level set on 1
 Mean compression ratio: 49.91%
-Mean compression time: 0.188 ms
-Mean decompression time: 0.145 ms
+Mean compression time: 0.180 ms
+Mean decompression time: 0.152 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progl
 LZO: compression level set on 1
 Mean compression ratio: 37.24%
-Mean compression time: 0.210 ms
-Mean decompression time: 0.165 ms
+Mean compression time: 0.256 ms
+Mean decompression time: 0.229 ms
 
 ********************************
 
 file: testdata/calgary-corpus/progp
 LZO: compression level set on 1
 Mean compression ratio: 34.99%
-Mean compression time: 0.202 ms
-Mean decompression time: 0.136 ms
+Mean compression time: 0.151 ms
+Mean decompression time: 0.171 ms
 
 ********************************
 
 file: testdata/calgary-corpus/trans
 LZO: compression level set on 1
 Mean compression ratio: 34.44%
-Mean compression time: 0.331 ms
-Mean decompression time: 0.230 ms
+Mean compression time: 0.446 ms
+Mean decompression time: 0.390 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/alice29.txt
 LZO: compression level set on 1
 Mean compression ratio: 57.40%
-Mean compression time: 0.818 ms
-Mean decompression time: 0.578 ms
+Mean compression time: 1.012 ms
+Mean decompression time: 0.781 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/asyoulik.txt
 LZO: compression level set on 1
 Mean compression ratio: 60.98%
-Mean compression time: 0.648 ms
-Mean decompression time: 0.438 ms
+Mean compression time: 0.755 ms
+Mean decompression time: 0.578 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/cp.html
 LZO: compression level set on 1
 Mean compression ratio: 47.74%
-Mean compression time: 0.093 ms
-Mean decompression time: 0.056 ms
+Mean compression time: 0.104 ms
+Mean decompression time: 0.081 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/fields.c
 LZO: compression level set on 1
 Mean compression ratio: 42.35%
-Mean compression time: 0.038 ms
-Mean decompression time: 0.023 ms
+Mean compression time: 0.044 ms
+Mean decompression time: 0.034 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/grammar.lsp
 LZO: compression level set on 1
 Mean compression ratio: 49.37%
-Mean compression time: 0.016 ms
-Mean decompression time: 0.005 ms
+Mean compression time: 0.018 ms
+Mean decompression time: 0.010 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/kennedy.xls
 LZO: compression level set on 1
 Mean compression ratio: 35.20%
-Mean compression time: 2.022 ms
-Mean decompression time: 1.081 ms
+Mean compression time: 2.167 ms
+Mean decompression time: 1.555 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/lcet10.txt
 LZO: compression level set on 1
 Mean compression ratio: 55.14%
-Mean compression time: 1.750 ms
-Mean decompression time: 1.255 ms
+Mean compression time: 1.722 ms
+Mean decompression time: 1.457 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/plrabn12.txt
 LZO: compression level set on 1
 Mean compression ratio: 65.22%
-Mean compression time: 2.318 ms
-Mean decompression time: 1.546 ms
+Mean compression time: 2.239 ms
+Mean decompression time: 1.725 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/ptt5
 LZO: compression level set on 1
 Mean compression ratio: 16.97%
-Mean compression time: 0.674 ms
-Mean decompression time: 0.487 ms
+Mean compression time: 0.682 ms
+Mean decompression time: 0.728 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/sum
 LZO: compression level set on 1
 Mean compression ratio: 47.19%
-Mean compression time: 0.121 ms
-Mean decompression time: 0.079 ms
+Mean compression time: 0.131 ms
+Mean decompression time: 0.102 ms
 
 ********************************
 
 file: testdata/canterbury-corpus/xargs.1
 LZO: compression level set on 1
 Mean compression ratio: 59.03%
-Mean compression time: 0.018 ms
-Mean decompression time: 0.006 ms
+Mean compression time: 0.019 ms
+Mean decompression time: 0.010 ms
 
 ********************************
 
 file: testdata/executable/101.EXE
 LZO: compression level set on 1
 Mean compression ratio: 68.87%
-Mean compression time: 1.161 ms
-Mean decompression time: 0.702 ms
+Mean compression time: 2.507 ms
+Mean decompression time: 1.583 ms
 
 ********************************
 
 file: testdata/executable/netscape.exe
 LZO: compression level set on 1
 Mean compression ratio: 63.76%
-Mean compression time: 10.234 ms
-Mean decompression time: 7.059 ms
+Mean compression time: 11.233 ms
+Mean decompression time: 8.265 ms
 
 ********************************
 
 file: testdata/executable/pine.bin
 LZO: compression level set on 1
 Mean compression ratio: 51.72%
-Mean compression time: 5.710 ms
-Mean decompression time: 4.150 ms
+Mean compression time: 8.712 ms
+Mean decompression time: 4.995 ms
 
 ********************************
 
 file: testdata/graphics/clegg.tif
 LZO: compression level set on 1
 Mean compression ratio: 46.53%
-Mean compression time: 2.273 ms
-Mean decompression time: 0.858 ms
+Mean compression time: 2.176 ms
+Mean decompression time: 1.866 ms
 
 ********************************
 
 file: testdata/graphics/frymire.tif
 LZO: compression level set on 1
 Mean compression ratio: 17.13%
-Mean compression time: 5.430 ms
-Mean decompression time: 4.120 ms
+Mean compression time: 7.836 ms
+Mean decompression time: 6.076 ms
 
 ********************************
 
 file: testdata/graphics/lena3.tif
 LZO: compression level set on 1
 Mean compression ratio: 99.35%
-Mean compression time: 1.876 ms
-Mean decompression time: 0.165 ms
+Mean compression time: 1.588 ms
+Mean decompression time: 0.746 ms
 
 ********************************
 
 file: testdata/graphics/monarch.tif
 LZO: compression level set on 1
 Mean compression ratio: 93.83%
-Mean compression time: 2.004 ms
-Mean decompression time: 0.870 ms
+Mean compression time: 3.592 ms
+Mean decompression time: 2.181 ms
 
 ********************************
 
 file: testdata/graphics/peppers3.tif
 LZO: compression level set on 1
 Mean compression ratio: 99.77%
-Mean compression time: 0.710 ms
-Mean decompression time: 0.155 ms
+Mean compression time: 1.552 ms
+Mean decompression time: 0.965 ms
 
 ********************************
 
 file: testdata/graphics/sail.tif
 LZO: compression level set on 1
 Mean compression ratio: 99.77%
-Mean compression time: 1.409 ms
-Mean decompression time: 0.349 ms
+Mean compression time: 2.398 ms
+Mean decompression time: 1.340 ms
 
 ********************************
 
 file: testdata/graphics/serrano.tif
 LZO: compression level set on 1
 Mean compression ratio: 17.12%
-Mean compression time: 2.158 ms
-Mean decompression time: 1.547 ms
+Mean compression time: 4.237 ms
+Mean decompression time: 3.182 ms
 
 ********************************
 
 file: testdata/graphics/tulips.tif
 LZO: compression level set on 1
 Mean compression ratio: 99.88%
-Mean compression time: 0.860 ms
-Mean decompression time: 0.238 ms
+Mean compression time: 1.490 ms
+Mean decompression time: 1.248 ms
 
 ********************************
 
 file: testdata/sound/every.wav
 LZO: compression level set on 1
 Mean compression ratio: 100.00%
-Mean compression time: 7.789 ms
-Mean decompression time: 0.819 ms
+Mean compression time: 10.136 ms
+Mean decompression time: 4.153 ms
 
 ********************************
 
 file: testdata/sound/mike.wav
 LZO: compression level set on 1
 Mean compression ratio: 97.69%
-Mean compression time: 2.260 ms
-Mean decompression time: 0.859 ms
+Mean compression time: 2.993 ms
+Mean decompression time: 1.675 ms
 
 ********************************
 
 file: testdata/text/1musk10.txt
 LZO: compression level set on 1
 Mean compression ratio: 59.38%
-Mean compression time: 5.979 ms
-Mean decompression time: 4.321 ms
+Mean compression time: 9.223 ms
+Mean decompression time: 5.022 ms
 
 ********************************
 
 file: testdata/text/anne11.txt
 LZO: compression level set on 1
 Mean compression ratio: 61.17%
-Mean compression time: 2.786 ms
-Mean decompression time: 1.916 ms
+Mean compression time: 2.611 ms
+Mean decompression time: 2.128 ms
 
 ********************************
 
 file: testdata/text/world95.txt
 LZO: compression level set on 1
 Mean compression ratio: 52.10%
-Mean compression time: 11.193 ms
-Mean decompression time: 8.046 ms
+Mean compression time: 13.759 ms
+Mean decompression time: 9.299 ms
 
 ********************************
 

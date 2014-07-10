@@ -3,9 +3,6 @@
 #include "bzip2_compression.h"
 #include "util.h"
 
-
-// If stats mode is enabled we're going to run
-// several tests and measure mean values.
 static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
@@ -68,11 +65,6 @@ static int compress(FILE *source, FILE *arch, int level, unsigned int *source_le
     // Print/measure stats.
     clock_gettime(CLOCK_REALTIME, &stop_ts);
     struct timespec result_ts = diff(start_ts, stop_ts);
-    #ifndef STATS_MODE
-    printf("Handled bytes: %u, compressed bytes: %u\n", handled_bytes, compressed_bytes);
-    printf("Compression ratio: %.2f%%\n", (output_size / (float)buf_size) * 100.0f);
-    printf("Compression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-    #endif
     mean_compression_time += result_ts.tv_nsec / 1000000.0f;
     mean_compression_ratio += (output_size / (float)buf_size) * 100.0f;
 
@@ -138,9 +130,6 @@ static int decompress(FILE *arch, FILE *output_file, unsigned int source_len)
     }
 
     struct timespec result_ts = diff(start_ts, stop_ts);
-    #ifndef STATS_MODE
-    printf("Decompression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-    #endif
     mean_decompression_time += result_ts.tv_nsec / 1000000.0f;
 
     return BZIP2_SUCCESS;
@@ -158,7 +147,6 @@ int run_bzip2(FILE *source, FILE *arch, FILE *output, int compression_level, int
 
     printf("bzip2: compression level set on %d\n", level);
 
-#ifdef STATS_MODE
     for (int i = 0; i < iterations; ++i) {
         ret = compress(source, arch, level, &source_len);
         if (ret == BZIP2_FAILURE) {
@@ -183,18 +171,6 @@ int run_bzip2(FILE *source, FILE *arch, FILE *output, int compression_level, int
     }
 
     printf("Mean decompression time: %.3f ms\n", mean_decompression_time / iterations);
-#else
-    ret = compress(source, arch, level, &source_len);
-    if (ret == BZIP2_FAILURE) {
-        return ret;
-    }
-
-    rewind(arch);
-    ret = decompress(arch, output, source_len);
-    if (ret == BZIP2_FAILURE) {
-        return ret;
-    }
-#endif
 
     return BZIP2_SUCCESS;
 }

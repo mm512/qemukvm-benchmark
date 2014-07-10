@@ -8,8 +8,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// If stats mode is enabled we're going to run
-// several tests and measure mean values.
 static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
@@ -205,10 +203,6 @@ static int compress(FILE *source, FILE *arch, int level, lzo_uint32 block_size)
     // Print/measure stats.
     clock_gettime(CLOCK_REALTIME, &stop_ts);
     struct timespec result_ts = diff(start_ts, stop_ts);
-    #ifndef STATS_MODE
-    printf("Compression ratio: %.2f%%\n", (total_out / (float)total_in) * 100.0f);
-    printf("Compression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-    #endif
     mean_compression_time += result_ts.tv_nsec / 1000000.0f;
     mean_compression_ratio += (total_out / (float)total_in) * 100.0f;
     total_out = 0;
@@ -311,9 +305,6 @@ static int decompress(FILE *arch, FILE *output)
     clock_gettime(CLOCK_REALTIME, &stop_ts);
 
     struct timespec result_ts = diff(start_ts, stop_ts);
-    #ifndef STATS_MODE
-    printf("Decompression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-    #endif
     mean_decompression_time += result_ts.tv_nsec / 1000000.0f;
 
     lzo_free(buf);
@@ -338,7 +329,6 @@ int run_lzo(FILE *source, FILE *arch, FILE *output, int compression_level, int i
 
     printf("LZO: compression level set on %d\n", opt_compression_level);
 
-#ifdef STATS_MODE
     for (int i = 0; i < iterations; ++i) {
         ret = compress(source, arch, opt_compression_level, opt_block_size);
         if (ret == LZO_FAILURE) {
@@ -363,18 +353,6 @@ int run_lzo(FILE *source, FILE *arch, FILE *output, int compression_level, int i
     }
 
     printf("Mean decompression time: %.3f ms\n", mean_decompression_time / iterations);
-#else
-    ret = compress(source, arch, opt_compression_level, opt_block_size);
-    if (ret == LZO_FAILURE) {
-        return ret;
-    }
-
-    rewind(arch);
-    ret = decompress(arch, output);
-    if (ret == LZO_FAILURE) {
-        return ret;
-    }
-#endif
 
     return LZO_SUCCESS;
 }

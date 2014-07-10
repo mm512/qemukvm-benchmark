@@ -3,8 +3,6 @@
 #include <string.h>
 #include <zlib.h>
 
-// If stats mode is enabled we're going to run
-// several tests and measure mean values.
 static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
@@ -64,10 +62,6 @@ static int def(FILE *source, FILE *dest, int level)
     } while (flush != Z_FINISH);
 
     // Measure/print compression ratio.
-#ifndef STATS_MODE
-    printf("Handled bytes: %lu, compressed bytes: %lu\n", stream.total_in, stream.total_out);
-    printf("Compression ratio: %.2f%%\n", (stream.total_out / (float)stream.total_in) * 100.0f);
-#endif
     mean_compression_ratio += (stream.total_out / (float)stream.total_in) * 100.0f;
 
     deflateEnd(&stream);
@@ -168,9 +162,6 @@ static int compress_with_zlib(FILE *source, FILE *arch, int level)
 
     // Measure/print stats.
     struct timespec result_ts = diff(start_ts, stop_ts);
-#ifndef STATS_MODE
-    printf("Compression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-#endif
 
     mean_compression_time += result_ts.tv_nsec / 1000000.0f;
 
@@ -196,9 +187,6 @@ static int decompress_with_zlib(FILE *source, FILE *output)
 
     // Measure/print stats.
     struct timespec result_ts = diff(start_ts, stop_ts);
-#ifndef STATS_MODE
-    printf("Decompression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-#endif
 
     mean_decompression_time += result_ts.tv_nsec / 1000000.0f;
 
@@ -220,7 +208,6 @@ int run_zlib(FILE *source, FILE *arch, FILE *output, int compression_level, int 
     SET_BINARY_MODE(arch);
 
     printf("zlib: compression level set on %d\n", level);
-#ifdef STATS_MODE
     for (int i = 0; i < iterations; ++i) {
         ret = compress_with_zlib(source, arch, level);
         if (ret == ZLIB_FAILURE) {
@@ -245,18 +232,6 @@ int run_zlib(FILE *source, FILE *arch, FILE *output, int compression_level, int 
     }
 
     printf("Mean decompression time: %.3f ms\n", mean_decompression_time / iterations);
-#else
-    ret = compress_with_zlib(source, arch, level);
-    if (ret == ZLIB_FAILURE) {
-        return ret;
-    }
-
-    rewind(arch);
-    ret = decompress_with_zlib(arch, output);
-    if (ret == ZLIB_FAILURE) {
-        return ret;
-    }
-#endif
 
     return ZLIB_SUCCESS;
 }

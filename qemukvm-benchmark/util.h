@@ -4,8 +4,6 @@
 #include <time.h>
 #include <stdio.h>
 
-#define STATS_MODE 1
-
 enum {
     LIB_ZLIB,
     LIB_BZIP2,

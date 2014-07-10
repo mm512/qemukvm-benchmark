@@ -3,8 +3,6 @@
 #include <snappy-c.h>
 #include <stdlib.h>
 
-// If stats mode is enabled we're going to run
-// several tests and measure mean values.
 static float mean_compression_time;
 static float mean_compression_ratio;
 static float mean_decompression_time;
@@ -52,11 +50,6 @@ int compress(FILE *source, FILE *arch)
     // Print/measure stats.
     clock_gettime(CLOCK_REALTIME, &stop_ts);
     struct timespec result_ts = diff(start_ts, stop_ts);
-    #ifndef STATS_MODE
-    printf("Handled bytes: %u, compressed bytes: %u\n", handled_bytes, compressed_bytes);
-    printf("Compression ratio: %.2f%%\n", (compressed_len / (float)buf_len) * 100.0f);
-    printf("Compression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-    #endif
     mean_compression_time += result_ts.tv_nsec / 1000000.0f;
     mean_compression_ratio += (compressed_len / (float)buf_len) * 100.0f;
 
@@ -117,9 +110,6 @@ int decompress(FILE *arch, FILE *output_file)
     clock_gettime(CLOCK_REALTIME, &stop_ts);
 
     struct timespec result_ts = diff(start_ts, stop_ts);
-    #ifndef STATS_MODE
-    printf("Decompression time: %.3f ms\n", result_ts.tv_nsec / 1000000.0f);
-    #endif
     mean_decompression_time += result_ts.tv_nsec / 1000000.0f;
 
     return SNAPPY_SUCCESS;
@@ -128,8 +118,6 @@ int decompress(FILE *arch, FILE *output_file)
 int run_snappy(FILE *source, FILE *arch, FILE *output, int iterations)
 {
     int ret;
-
-#ifdef STATS_MODE
     for (int i = 0; i < iterations; ++i) {
         ret = compress(source, arch);
         if (ret == SNAPPY_FAILURE) {
@@ -154,18 +142,5 @@ int run_snappy(FILE *source, FILE *arch, FILE *output, int iterations)
     }
 
     printf("Mean decompression time: %.3f ms\n", mean_decompression_time / iterations);
-#else
-    ret = compress(source, arch);
-    if (ret == SNAPPY_FAILURE) {
-        return ret;
-    }
-
-    rewind(arch);
-    ret = decompress(arch, output);
-    if (ret == SNAPPY_FAILURE) {
-        return ret;
-    }
-#endif
-
     return SNAPPY_SUCCESS;
 }

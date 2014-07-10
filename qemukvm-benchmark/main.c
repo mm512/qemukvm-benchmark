@@ -192,10 +192,6 @@ int main(int argc, char **argv)
     options.level = HIGH_COMPRESSION;
     options.library = LIB_ZLIB;
 
-#ifndef STATS_MODE
-    puts("*** QEMU KVM performance benchmark ***\n");
-#endif
-
     if (argc < 2) {
         puts("Too few arguments");
         usage();
@@ -203,9 +199,6 @@ int main(int argc, char **argv)
     }
 
     get_options(argc, argv, &options, input_file_name);
-#ifndef STATS_MODE
-    print_configuration(options);
-#endif
 
     // Open input file.
     infile = fopen(input_file_name, "r");
@@ -216,33 +209,17 @@ int main(int argc, char **argv)
 
     switch(options.library) {
     case LIB_ZLIB:
-#ifndef STATS_MODE
-        puts("\n\n*************** *************** ZLIB *************** ***************\n");
-        printf("file: %s\n", input_file_name);
-#endif
         run_benchmark(infile, input_file_name, options);
         rewind(infile);
         break;
     case LIB_BZIP2:
-#ifndef STATS_MODE
-        puts("\n\n*************** *************** BZIP2 *************** ***************\n");
-        printf("file: %s\n", input_file_name);
-#endif
         run_benchmark(infile, input_file_name, options);
         rewind(infile);
         break;
     case LIB_SNAPPY:
-#ifndef STATS_MODE
-        puts("\n\n*************** *************** SNAPPY *************** ***************\n");
-        printf("file: %s\n", input_file_name);
-#endif
         run_benchmark(infile, input_file_name, options);
         break;
     case LIB_LZO:
-#ifndef STATS_MODE
-        puts("\n\n*************** *************** LZO *************** ***************\n");
-        printf("file: %s\n", input_file_name);
-#endif
         run_benchmark(infile, input_file_name, options);
         break;
     default:
